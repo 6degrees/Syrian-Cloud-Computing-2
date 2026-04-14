@@ -26,6 +26,9 @@ const GradientBlinds = ({
   className = '',
   dpr,
   paused = false,
+  autoAnimate = false,
+  autoAnimateSpeed = 0.35,
+  autoAnimateRange = 0.22,
   gradientColors,
   angle = 0,
   noise = 0.1,
@@ -47,6 +50,7 @@ const GradientBlinds = ({
   const geometryRef = useRef(null);
   const rendererRef = useRef(null);
   const mouseTargetRef = useRef([0, 0]);
+  const hasUserPointerRef = useRef(false);
   const lastTimeRef = useRef(0);
   const firstResizeRef = useRef(true);
 
@@ -254,6 +258,7 @@ void main() {
       const scale = renderer.dpr || 1;
       const x = (e.clientX - rect.left) * scale;
       const y = (e.clientY - rect.top) * scale;
+      hasUserPointerRef.current = true;
       mouseTargetRef.current = [x, y];
       if (mouseDampening <= 0) uniforms.iMouse.value = [x, y];
     };
@@ -263,6 +268,22 @@ void main() {
     const loop = (t) => {
       rafRef.current = requestAnimationFrame(loop);
       uniforms.iTime.value = t * 0.001;
+
+      // On touch/mobile where there is no cursor, keep the spotlight moving.
+      if (autoAnimate && !hasUserPointerRef.current) {
+        const w = gl.drawingBufferWidth || 1;
+        const h = gl.drawingBufferHeight || 1;
+        const cx = w * 0.5;
+        const cy = h * 0.5;
+        const ampX = w * autoAnimateRange;
+        const ampY = h * autoAnimateRange * 0.7;
+        const tt = t * 0.001 * autoAnimateSpeed;
+        mouseTargetRef.current = [
+          cx + Math.cos(tt) * ampX,
+          cy + Math.sin(tt * 1.3) * ampY,
+        ];
+      }
+
       if (mouseDampening > 0) {
         if (!lastTimeRef.current) lastTimeRef.current = t;
         const dt = (t - lastTimeRef.current) / 1000;
@@ -314,6 +335,9 @@ void main() {
     gradientColors,
     mirrorGradient,
     mixBlendMode,
+    autoAnimate,
+    autoAnimateRange,
+    autoAnimateSpeed,
     mouseDampening,
     noise,
     paused,

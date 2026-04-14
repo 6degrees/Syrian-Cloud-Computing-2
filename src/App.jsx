@@ -271,6 +271,7 @@ function FeatureRow({ item, index, visible }) {
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(false);
   const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
   const [ringPos, setRingPos] = useState({ x: -100, y: -100 });
   const ringRef = useRef({ x: -100, y: -100 });
@@ -282,6 +283,14 @@ export default function App() {
   const [whyLeftRef, whyLeftVisible] = useReveal(0.1);
   const [whyFeatRef, whyFeatVisible] = useReveal(0.05);
   const [ctaRef, ctaVisible] = useReveal(0.1);
+
+  useEffect(() => {
+    const media = window.matchMedia('(max-width: 768px), (hover: none), (pointer: coarse)');
+    const update = () => setIsMobileView(media.matches);
+    update();
+    media.addEventListener('change', update);
+    return () => media.removeEventListener('change', update);
+  }, []);
 
   useEffect(() => {
     const onMove = (e) => { mouseRef.current = { x: e.clientX, y: e.clientY }; };
@@ -388,6 +397,9 @@ export default function App() {
         <div style={{ ...s.blindsWrap, pointerEvents: 'none' }} ref={heroBgRef}>
           <GradientBlinds
             gradientColors={HERO_GRADIENT_COLORS}
+            autoAnimate={isMobileView}
+            autoAnimateSpeed={0.5}
+            autoAnimateRange={0.16}
             angle={-35}
             noise={0.05}
             blindCount={14}
