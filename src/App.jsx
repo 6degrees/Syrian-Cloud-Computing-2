@@ -29,7 +29,7 @@ const Logo = ({ footer = false }) => (
     src={sccLogo}
     alt="Syrian Cloud Computing"
     style={{
-      width: footer ? 132 : 92,
+      width: footer ? 120 : 84,
       height: 'auto',
       display: 'block',
       opacity: 0.95,
