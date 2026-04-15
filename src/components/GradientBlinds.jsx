@@ -124,6 +124,7 @@ uniform float uSpotlightOpacity;
 uniform float uMirror;
 uniform float uDistort;
 uniform float uShineFlip;
+uniform float uFrost;
 uniform vec3  uColor0;
 uniform vec3  uColor1;
 uniform vec3  uColor2;
@@ -193,20 +194,59 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     if (uMirror > 0.5) {
       t = 1.0 - abs(1.0 - 2.0 * fract(t));
     }
-    vec3 base = getGradientColor(t);
+    float liquidPhase = iTime * 0.34;
+    float wave1 = sin(uvMod.y * 7.0 + liquidPhase) * 0.02;
+    float wave2 = cos(uvMod.x * 5.0 - liquidPhase * 0.7) * 0.014;
+    float tFlow = clamp(t + wave1 + wave2, 0.0, 1.0);
+    // Multi-tap gradient sampling for smooth liquid blur.
+    vec3 g0 = getGradientColor(clamp(tFlow - 0.07, 0.0, 1.0));
+    vec3 g1 = getGradientColor(clamp(tFlow - 0.03, 0.0, 1.0));
+    vec3 g2 = getGradientColor(tFlow);
+    vec3 g3 = getGradientColor(clamp(tFlow + 0.03, 0.0, 1.0));
+    vec3 g4 = getGradientColor(clamp(tFlow + 0.07, 0.0, 1.0));
+    vec3 base = g0 * 0.14 + g1 * 0.22 + g2 * 0.28 + g3 * 0.22 + g4 * 0.14;
 
     vec2 offset = vec2(iMouse.x/iResolution.x, iMouse.y/iResolution.y);
     float d = length(uv0 - offset);
     float r = max(uSpotlightRadius, 1e-4);
     float dn = d / r;
     float spot = (1.0 - 2.0 * pow(dn, uSpotlightSoftness)) * uSpotlightOpacity;
-    vec3 cir = vec3(spot);
+    // Reduce center glare and keep spotlight in brand colors only.
+    float centerDampen = smoothstep(0.0, 0.38, dn);
+    spot *= mix(0.42, 0.78, centerDampen);
+    vec3 brandTeal = vec3(0.36, 0.50, 0.47);     // #5C7F78
+    vec3 brandGold = vec3(0.83, 0.73, 0.53);     // #D3B988
+    vec3 brandEmerald = vec3(0.15, 0.25, 0.23);  // #25403A
+    vec3 brandBronze = vec3(0.44, 0.37, 0.27);   // #705F45
+    float hueBlend = smoothstep(0.25, 0.85, tFlow);
+    vec3 coolTint = mix(brandEmerald, brandTeal, 0.55);
+    vec3 warmTint = mix(brandBronze, brandGold, 0.65);
+    vec3 spotlightTint = mix(coolTint, warmTint, hueBlend);
+    vec3 cir = spotlightTint * spot;
     float stripe = fract(uvMod.x * max(uBlindCount, 1.0));
     if (uShineFlip > 0.5) stripe = 1.0 - stripe;
-    vec3 ran = vec3(stripe);
+    // Anti-alias seam transitions to avoid jagged stair-steps.
+    float seamSoftness = 0.012;
+    float seamMask = smoothstep(0.0, seamSoftness, stripe) * (1.0 - smoothstep(1.0 - seamSoftness, 1.0, stripe));
+    float stripeAA = mix(0.5, stripe, seamMask);
+    vec3 ran = vec3(stripeAA);
 
     vec3 col = cir + base - ran;
-    col += (rand(gl_FragCoord.xy) - 0.5) * uNoise;
+    // Liquid glass diffusion and soft specular movement.
+    float edge = abs(stripeAA - 0.5) * 2.0;
+    float centerMask = 1.0 - smoothstep(0.0, 0.85, edge);
+    float edgeMask = smoothstep(0.38, 1.0, edge);
+    float flowLineA = sin((uvMod.x + uvMod.y * 0.7) * 10.0 + liquidPhase * 1.8);
+    float flowLineB = cos((uvMod.x * 0.6 - uvMod.y) * 12.0 - liquidPhase * 1.4);
+    float flowMix = (flowLineA * 0.5 + flowLineB * 0.5) * 0.5 + 0.5;
+    float sparkle = smoothstep(0.88, 1.0, flowMix) * 0.035;
+    vec3 frostTint = mix(brandTeal, brandGold, 0.45);
+    vec3 glassBase = mix(col * 0.74, col * frostTint, 0.62);
+    col = mix(col, glassBase, uFrost);
+    col += centerMask * 0.095 * uFrost;
+    col += edgeMask * 0.035 * uFrost;
+    col += sparkle * (0.5 + 0.3 * edgeMask) * uFrost;
+    col += (rand(gl_FragCoord.xy) - 0.5) * uNoise * 0.05;
 
     fragColor = vec4(col, 1.0);
 }
@@ -232,6 +272,7 @@ void main() {
       uMirror: { value: mirrorGradient ? 1 : 0 },
       uDistort: { value: distortAmount },
       uShineFlip: { value: shineDirection === 'right' ? 1 : 0 },
+      uFrost: { value: 0.9 },
       uColor0: { value: colorArr[0] },
       uColor1: { value: colorArr[1] },
       uColor2: { value: colorArr[2] },
@@ -283,7 +324,8 @@ void main() {
       const rect = canvas.getBoundingClientRect();
       const scale = renderer.dpr || 1;
       const x = (e.clientX - rect.left) * scale;
-      const y = (e.clientY - rect.top) * scale;
+      // WebGL frag coordinates are bottom-left origin; invert Y for natural pointer follow.
+      const y = (rect.bottom - e.clientY) * scale;
       hasUserPointerRef.current = true;
       mouseTargetRef.current = [x, y];
       if (mouseDampeningRef.current <= 0) uniforms.iMouse.value = [x, y];
@@ -313,8 +355,8 @@ void main() {
         const ampY = h * range * 0.7;
         const tt = t * 0.001 * speed;
         mouseTargetRef.current = [
-          cx + (Math.cos(tt) + Math.sin(tt * 0.57) * 0.35) * ampX,
-          cy + (Math.sin(tt * 1.3) + Math.cos(tt * 0.41) * 0.25) * ampY,
+          cx + (Math.cos(tt) + Math.sin(tt * 0.62) * 0.2) * ampX,
+          cy + (Math.sin(tt * 1.08) + Math.cos(tt * 0.48) * 0.12) * ampY,
         ];
       }
 
