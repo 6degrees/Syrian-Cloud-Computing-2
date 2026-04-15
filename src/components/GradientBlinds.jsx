@@ -274,7 +274,7 @@ void main() {
       uniforms.iTime.value = t * 0.001;
 
       // On touch/mobile where there is no cursor, keep the spotlight moving.
-      if (autoAnimate && !hasUserPointerRef.current) {
+      if (autoAnimate && (disablePointerInteraction || !hasUserPointerRef.current)) {
         const w = gl.drawingBufferWidth || 1;
         const h = gl.drawingBufferHeight || 1;
         const cx = w * 0.5;
@@ -283,8 +283,8 @@ void main() {
         const ampY = h * autoAnimateRange * 0.7;
         const tt = t * 0.001 * autoAnimateSpeed;
         mouseTargetRef.current = [
-          cx + Math.cos(tt) * ampX,
-          cy + Math.sin(tt * 1.3) * ampY,
+          cx + (Math.cos(tt) + Math.sin(tt * 0.57) * 0.35) * ampX,
+          cy + (Math.sin(tt * 1.3) + Math.cos(tt * 0.41) * 0.25) * ampY,
         ];
       }
 
