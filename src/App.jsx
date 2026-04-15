@@ -193,7 +193,7 @@ const s = {
   section: (bg = C.bg) => ({ padding: '120px 48px', background: bg }),
   inner: { maxWidth: 1200, margin: '0 auto' },
   eyebrow: { fontFamily: SFMono, fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', color: C.green, marginBottom: 18, display: 'flex', alignItems: 'center', gap: 12 },
-  h2: { fontFamily: SF, fontSize: 'clamp(32px,4vw,52px)', fontWeight: 800, lineHeight: 1.08, letterSpacing: '-0.02em', color: C.text, marginBottom: 20 },
+  h2: { fontFamily: SF, fontSize: 'clamp(32px,4vw,52px)', fontWeight: 600, lineHeight: 1.08, letterSpacing: '-0.02em', color: C.text, marginBottom: 20 },
   subText: { fontSize: 16, color: C.muted, lineHeight: 1.65, maxWidth: 480, fontFamily: SFText },
 
   servicesGrid: { display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 1, background: C.border, borderTop: `1px solid ${C.border}`, marginTop: 64 },
