@@ -26,6 +26,10 @@ const GradientBlinds = ({
   className = '',
   dpr,
   paused = false,
+  autoAnimate = false,
+  disablePointerInteraction = false,
+  autoAnimateSpeed = 0.35,
+  autoAnimateRange = 0.22,
   gradientColors,
   angle = 0,
   noise = 0.1,
@@ -48,6 +52,7 @@ const GradientBlinds = ({
   const rendererRef = useRef(null);
   const uniformsRef = useRef(null);
   const mouseTargetRef = useRef([0, 0]);
+  const hasUserPointerRef = useRef(false);
   const lastTimeRef = useRef(0);
   const firstResizeRef = useRef(true);
 
@@ -57,9 +62,17 @@ const GradientBlinds = ({
   const mouseDampeningRef = useRef(mouseDampening);
   const blindCountRef = useRef(blindCount);
   const blindMinWidthRef = useRef(blindMinWidth);
+  const autoAnimateRef = useRef(autoAnimate);
+  const disablePointerInteractionRef = useRef(disablePointerInteraction);
+  const autoAnimateSpeedRef = useRef(autoAnimateSpeed);
+  const autoAnimateRangeRef = useRef(autoAnimateRange);
   useEffect(() => { pausedRef.current = paused; }, [paused]);
   useEffect(() => { mouseDampeningRef.current = mouseDampening; }, [mouseDampening]);
   useEffect(() => { blindCountRef.current = blindCount; blindMinWidthRef.current = blindMinWidth; }, [blindCount, blindMinWidth]);
+  useEffect(() => { autoAnimateRef.current = autoAnimate; }, [autoAnimate]);
+  useEffect(() => { disablePointerInteractionRef.current = disablePointerInteraction; }, [disablePointerInteraction]);
+  useEffect(() => { autoAnimateSpeedRef.current = autoAnimateSpeed; }, [autoAnimateSpeed]);
+  useEffect(() => { autoAnimateRangeRef.current = autoAnimateRange; }, [autoAnimateRange]);
 
   // Core effect: set up WebGL once. Only re-run when dpr changes (which requires
   // creating a new renderer/canvas).
@@ -266,10 +279,12 @@ void main() {
     ro.observe(container);
 
     const onPointerMove = (e) => {
+      if (disablePointerInteractionRef.current) return;
       const rect = canvas.getBoundingClientRect();
       const scale = renderer.dpr || 1;
       const x = (e.clientX - rect.left) * scale;
       const y = (e.clientY - rect.top) * scale;
+      hasUserPointerRef.current = true;
       mouseTargetRef.current = [x, y];
       if (mouseDampeningRef.current <= 0) uniforms.iMouse.value = [x, y];
     };
@@ -281,6 +296,28 @@ void main() {
       // Pause when tab is hidden to save CPU/battery
       if (document.hidden) return;
       uniforms.iTime.value = t * 0.001;
+
+      // On touch/mobile (or whenever the user hasn't moved a cursor yet)
+      // drive the spotlight autonomously so the gradient still feels alive.
+      if (
+        autoAnimateRef.current &&
+        (disablePointerInteractionRef.current || !hasUserPointerRef.current)
+      ) {
+        const w = gl.drawingBufferWidth || 1;
+        const h = gl.drawingBufferHeight || 1;
+        const cx = w * 0.5;
+        const cy = h * 0.5;
+        const range = autoAnimateRangeRef.current;
+        const speed = autoAnimateSpeedRef.current;
+        const ampX = w * range;
+        const ampY = h * range * 0.7;
+        const tt = t * 0.001 * speed;
+        mouseTargetRef.current = [
+          cx + (Math.cos(tt) + Math.sin(tt * 0.57) * 0.35) * ampX,
+          cy + (Math.sin(tt * 1.3) + Math.cos(tt * 0.41) * 0.25) * ampY,
+        ];
+      }
+
       const damp = mouseDampeningRef.current;
       if (damp > 0) {
         if (!lastTimeRef.current) lastTimeRef.current = t;
@@ -326,11 +363,11 @@ void main() {
       uniformsRef.current = null;
     };
     // Only re-run on dpr change (requires a new renderer/canvas).
-    // All other props are applied to uniforms via the effect below.
+    // All other props are applied to uniforms or consumed via live refs.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dpr]);
 
-  // Apply scalar/color uniform updates without reinitializing WebGL.
+  // Apply scalar uniform updates without reinitializing WebGL.
   useEffect(() => {
     const u = uniformsRef.current;
     if (!u) return;

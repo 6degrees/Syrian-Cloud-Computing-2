@@ -12,8 +12,8 @@ export default function Introduction() {
           <div style={s.introGrid} className="intro-grid">
             <div style={s.introTextWrap}>
               <div style={s.eyebrow} className="eyebrow-line">{t.intro.eyebrow}</div>
-              <h2 style={{ ...s.h2, marginBottom: 14 }}>{t.intro.title}</h2>
-              <p style={{ ...s.subText, maxWidth: 660 }}>{t.intro.body}</p>
+              <h2 style={{ ...s.h2, marginBottom: 14 }} className="section-h2">{t.intro.title}</h2>
+              <p style={{ ...s.subText, maxWidth: 660 }} className="section-subtext">{t.intro.body}</p>
             </div>
 
             <div style={s.introVisual}>

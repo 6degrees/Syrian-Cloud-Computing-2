@@ -35,8 +35,8 @@ export default function WhyChooseUs() {
             className="why-left-sticky"
           >
             <div style={s.eyebrow} className="eyebrow-line">{t.why.eyebrow}</div>
-            <h2 style={s.h2}>{t.why.title}<br />{t.why.titleLine2}</h2>
-            <p style={{ ...s.subText, marginBottom: 32, maxWidth: 430 }}>{t.why.body}</p>
+            <h2 style={s.h2} className="section-h2">{t.why.title}<br />{t.why.titleLine2}</h2>
+            <p style={{ ...s.subText, marginBottom: 32, maxWidth: 430 }} className="section-subtext">{t.why.body}</p>
             <a
               href="#cta"
               style={s.whyCta}

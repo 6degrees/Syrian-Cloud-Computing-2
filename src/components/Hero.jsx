@@ -3,6 +3,7 @@ import GradientBlinds from './GradientBlinds.jsx';
 import { s } from '../styles';
 import { HERO_GRADIENT_COLORS } from '../theme';
 import useRafScroll from '../hooks/useRafScroll';
+import useIsMobileView from '../hooks/useIsMobileView';
 import { scrollToId } from '../utils/scroll';
 import { useLang } from '../i18n/LanguageContext';
 
@@ -10,6 +11,7 @@ export default function Hero() {
   const contentRef = useRef(null);
   const bgRef = useRef(null);
   const [scrolled, setScrolled] = useState(false);
+  const isMobileView = useIsMobileView();
   const { t } = useLang();
 
   useRafScroll((y) => {
@@ -31,6 +33,10 @@ export default function Hero() {
       <div style={s.blindsWrap} ref={bgRef}>
         <GradientBlinds
           gradientColors={HERO_GRADIENT_COLORS}
+          autoAnimate={isMobileView}
+          disablePointerInteraction={isMobileView}
+          autoAnimateSpeed={0.8}
+          autoAnimateRange={0.22}
           angle={-35}
           noise={0.05}
           blindCount={14}

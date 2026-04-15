@@ -55,7 +55,7 @@ export default function Navbar() {
         >
           {t.nav.langToggle}
         </button>
-        <a href="#cta" style={s.navCta} onClick={onNavClick('cta')}>
+        <a href="#cta" style={s.navCta} className="nav-cta" onClick={onNavClick('cta')}>
           {t.nav.contact} {lang === 'ar' ? '↖' : '↗'}
         </a>
       </div>

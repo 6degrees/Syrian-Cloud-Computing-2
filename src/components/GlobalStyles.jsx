@@ -61,7 +61,13 @@ export default function GlobalStyles() {
         .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
         .services-grid { grid-template-columns: 1fr !important; }
         .footer-top-grid { grid-template-columns: 1fr !important; }
-        .hero-h1 { font-size: 38px !important; }
+        .hero-h1 { font-size: 34px !important; }
+        .hero-sub { font-size: 14px !important; line-height: 1.55 !important; }
+        .section-h2 { font-size: 30px !important; line-height: 1.15 !important; }
+        .section-subtext { font-size: 14px !important; line-height: 1.6 !important; }
+        .card-title { font-size: 16px !important; }
+        .card-desc { font-size: 12.5px !important; }
+        .nav-cta, .btn-primary, .btn-ghost, .btn-gold { font-size: 13px !important; }
         nav { padding: 0 20px !important; }
         section, .section-pad { padding: 72px 20px !important; }
       }

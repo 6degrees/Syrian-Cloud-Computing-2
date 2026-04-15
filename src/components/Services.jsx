@@ -23,8 +23,8 @@ function ServiceCard({ item, delay, learnMoreLabel }) {
       <div style={s.cardTopBorder(hovered)} />
       <span style={s.cardNum}>{item.num}</span>
       <div style={s.cardIcon} aria-hidden="true">{icons[item.icon]}</div>
-      <div style={s.cardTitle}>{item.title}</div>
-      <div style={s.cardDesc}>{item.desc}</div>
+      <div style={s.cardTitle} className="card-title">{item.title}</div>
+      <div style={s.cardDesc} className="card-desc">{item.desc}</div>
       <a
         href="#cta"
         style={s.cardLink(hovered)}
@@ -46,11 +46,11 @@ export default function Services() {
           <div style={s.servicesHeadGrid} className="services-head-grid">
             <div>
               <div style={s.eyebrow} className="eyebrow-line">{t.services.eyebrow}</div>
-              <h2 style={{ ...s.h2, marginBottom: 0 }}>
+              <h2 style={{ ...s.h2, marginBottom: 0 }} className="section-h2">
                 {t.services.title}<br />{t.services.titleLine2}
               </h2>
             </div>
-            <p style={s.servicesLead}>{t.services.lead}</p>
+            <p style={s.servicesLead} className="section-subtext">{t.services.lead}</p>
           </div>
         </div>
       </div>
