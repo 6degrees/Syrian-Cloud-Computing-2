@@ -250,8 +250,8 @@ function ServiceCard({ item, delay }) {
       <div style={s.cardTopBorder(hovered)} />
       <span style={s.cardNum}>{item.num}</span>
       <div style={s.cardIcon}>{item.icon}</div>
-      <div style={s.cardTitle}>{item.title}</div>
-      <div style={s.cardDesc}>{item.desc}</div>
+      <div style={s.cardTitle} className="card-title">{item.title}</div>
+      <div style={s.cardDesc} className="card-desc">{item.desc}</div>
       <a href="#" style={s.cardLink(hovered)}>Learn more →</a>
     </div>
   );
@@ -372,7 +372,13 @@ export default function App() {
           .stats-grid { grid-template-columns: repeat(2,1fr) !important; }
           .services-grid { grid-template-columns: 1fr !important; }
           .footer-top-grid { grid-template-columns: 1fr !important; }
-          .hero-h1 { font-size: 38px !important; }
+          .hero-h1 { font-size: 34px !important; }
+          .hero-sub { font-size: 14px !important; line-height: 1.55 !important; }
+          .section-h2 { font-size: 30px !important; line-height: 1.15 !important; }
+          .section-subtext { font-size: 14px !important; line-height: 1.6 !important; }
+          .card-title { font-size: 16px !important; }
+          .card-desc { font-size: 12.5px !important; }
+          .nav-cta, .btn-primary, .btn-ghost, .btn-gold { font-size: 13px !important; }
           nav { padding: 0 20px !important; }
           section, .section-pad { padding: 72px 20px !important; }
         }
@@ -390,7 +396,7 @@ export default function App() {
             <li key={id}><a href={`#${id}`} style={s.navLink} className="nav-link-el" onClick={(e) => { e.preventDefault(); scrollTo(id); }}>{label}</a></li>
           ))}
         </ul>
-        <a href="#cta" style={s.navCta} onClick={(e) => { e.preventDefault(); scrollTo('cta'); }}>Get In Touch ↗</a>
+        <a href="#cta" style={s.navCta} className="nav-cta" onClick={(e) => { e.preventDefault(); scrollTo('cta'); }}>Get In Touch ↗</a>
       </nav>
 
       <section style={s.hero} id="hero">
@@ -466,8 +472,8 @@ export default function App() {
             <div style={s.introGrid} className="intro-grid">
             <div style={s.introTextWrap}>
               <div style={s.eyebrow} className="eyebrow-line">Introduction</div>
-              <h2 style={{ ...s.h2, marginBottom: 14 }}>Helping organizations move from traditional operations to advanced digital and e-services.</h2>
-              <p style={{ ...s.subText, maxWidth: 660 }}>
+              <h2 style={{ ...s.h2, marginBottom: 14 }} className="section-h2">Helping organizations move from traditional operations to advanced digital and e-services.</h2>
+              <p style={{ ...s.subText, maxWidth: 660 }} className="section-subtext">
                 Our mission is to support digital transformation through reliable cloud computing services, modern software platforms, and end-to-end digital solutions that improve efficiency, enhance customer experience, and unlock new revenue opportunities.
               </p>
             </div>
@@ -501,9 +507,9 @@ export default function App() {
             <div style={s.servicesHeadGrid} className="services-head-grid">
               <div>
                 <div style={s.eyebrow} className="eyebrow-line">Services</div>
-                <h2 style={{ ...s.h2, marginBottom: 0 }}>Cloud, software, and smart business solutions<br />for sustainable growth</h2>
+                <h2 style={{ ...s.h2, marginBottom: 0 }} className="section-h2">Cloud, software, and smart business solutions<br />for sustainable growth</h2>
               </div>
-              <p style={s.servicesLead}>From infrastructure and local SaaS to mobile and digital marketing, we build practical services that support both B2B and B2C success.</p>
+              <p style={s.servicesLead} className="section-subtext">From infrastructure and local SaaS to mobile and digital marketing, we build practical services that support both B2B and B2C success.</p>
             </div>
           </div>
         </div>
@@ -521,8 +527,8 @@ export default function App() {
           <div style={s.whyGrid} className="why-grid">
             <div ref={whyLeftRef} style={{ ...s.whyLeft, opacity: whyLeftVisible ? 1 : 0, transform: whyLeftVisible ? 'none' : 'translateY(32px)', transition: 'opacity 0.7s ease, transform 0.7s ease' }} className="why-left-sticky">
               <div style={s.eyebrow} className="eyebrow-line">Who We Are</div>
-              <h2 style={s.h2}>Syrian Cloud Computing:<br />Introduction & About</h2>
-              <p style={{ ...s.subText, marginBottom: 32, maxWidth: 430 }}>We support businesses and industries with secure cloud infrastructure, managed operations, locally hosted software, and revenue-focused digital services designed for real-world market impact.</p>
+              <h2 style={s.h2} className="section-h2">Syrian Cloud Computing:<br />Introduction & About</h2>
+              <p style={{ ...s.subText, marginBottom: 32, maxWidth: 430 }} className="section-subtext">We support businesses and industries with secure cloud infrastructure, managed operations, locally hosted software, and revenue-focused digital services designed for real-world market impact.</p>
               <a href="#cta" style={s.whyCta} className="why-cta" onClick={(e) => { e.preventDefault(); scrollTo('cta'); }}>Talk with our team →</a>
             </div>
             <div ref={whyFeatRef} style={{ display: 'flex', flexDirection: 'column' }}>
@@ -537,8 +543,8 @@ export default function App() {
         <div style={{ position: 'absolute', width: 400, height: 200, left: '50%', top: '50%', transform: 'translate(-50%,-50%)', background: 'radial-gradient(ellipse, rgba(211,185,136,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
         <div ref={ctaRef} style={{ ...s.inner, position: 'relative', zIndex: 1, opacity: ctaVisible ? 1 : 0, transform: ctaVisible ? 'none' : 'translateY(32px)', transition: 'opacity 0.7s ease, transform 0.7s ease' }}>
           <div style={{ ...s.eyebrow, justifyContent: 'center' }}>Get Started</div>
-          <h2 style={s.ctaH2}>Ready to accelerate your<br />digital transformation journey?</h2>
-          <p style={s.ctaSub}>Let us design the right mix of cloud, software, mobile, and digital growth services for your organization.</p>
+          <h2 style={s.ctaH2} className="section-h2">Ready to accelerate your<br />digital transformation journey?</h2>
+          <p style={s.ctaSub} className="section-subtext">Let us design the right mix of cloud, software, mobile, and digital growth services for your organization.</p>
           <div style={{ marginBottom: 16 }}><a href="mailto:hello@syriancloud.com" style={s.btnGold} className="btn-gold">Start Your Journey</a></div>
           <a href="tel:+963" style={s.ctaSecondary} className="cta-secondary">Talk to an engineer →</a>
         </div>
