@@ -398,6 +398,7 @@ export default function App() {
           <GradientBlinds
             gradientColors={HERO_GRADIENT_COLORS}
             autoAnimate={isMobileView}
+            disablePointerInteraction={isMobileView}
             autoAnimateSpeed={0.5}
             autoAnimateRange={0.16}
             angle={-35}

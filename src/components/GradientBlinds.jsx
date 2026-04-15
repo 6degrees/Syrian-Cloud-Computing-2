@@ -27,6 +27,7 @@ const GradientBlinds = ({
   dpr,
   paused = false,
   autoAnimate = false,
+  disablePointerInteraction = false,
   autoAnimateSpeed = 0.35,
   autoAnimateRange = 0.22,
   gradientColors,
@@ -254,6 +255,7 @@ void main() {
     ro.observe(container);
 
     const onPointerMove = (e) => {
+      if (disablePointerInteraction) return;
       const rect = canvas.getBoundingClientRect();
       const scale = renderer.dpr || 1;
       const x = (e.clientX - rect.left) * scale;
@@ -263,7 +265,9 @@ void main() {
       if (mouseDampening <= 0) uniforms.iMouse.value = [x, y];
     };
 
-    window.addEventListener('pointermove', onPointerMove);
+    if (!disablePointerInteraction) {
+      window.addEventListener('pointermove', onPointerMove);
+    }
 
     const loop = (t) => {
       rafRef.current = requestAnimationFrame(loop);
@@ -311,7 +315,9 @@ void main() {
 
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
-      window.removeEventListener('pointermove', onPointerMove);
+      if (!disablePointerInteraction) {
+        window.removeEventListener('pointermove', onPointerMove);
+      }
       ro.disconnect();
       if (canvas.parentElement === container) container.removeChild(canvas);
       const callIfFn = (obj, key) => {
@@ -336,6 +342,7 @@ void main() {
     mirrorGradient,
     mixBlendMode,
     autoAnimate,
+    disablePointerInteraction,
     autoAnimateRange,
     autoAnimateSpeed,
     mouseDampening,
