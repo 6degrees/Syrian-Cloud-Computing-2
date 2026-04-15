@@ -46,10 +46,23 @@ const GradientBlinds = ({
   const meshRef = useRef(null);
   const geometryRef = useRef(null);
   const rendererRef = useRef(null);
+  const uniformsRef = useRef(null);
   const mouseTargetRef = useRef([0, 0]);
   const lastTimeRef = useRef(0);
   const firstResizeRef = useRef(true);
 
+  // Live prop refs — updated on every render so the animation loop and
+  // event handlers see the latest values without re-initializing WebGL.
+  const pausedRef = useRef(paused);
+  const mouseDampeningRef = useRef(mouseDampening);
+  const blindCountRef = useRef(blindCount);
+  const blindMinWidthRef = useRef(blindMinWidth);
+  useEffect(() => { pausedRef.current = paused; }, [paused]);
+  useEffect(() => { mouseDampeningRef.current = mouseDampening; }, [mouseDampening]);
+  useEffect(() => { blindCountRef.current = blindCount; blindMinWidthRef.current = blindMinWidth; }, [blindCount, blindMinWidth]);
+
+  // Core effect: set up WebGL once. Only re-run when dpr changes (which requires
+  // creating a new renderer/canvas).
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -216,6 +229,7 @@ void main() {
       uColor7: { value: colorArr[7] },
       uColorCount: { value: colorCount },
     };
+    uniformsRef.current = uniforms;
 
     const program = new Program(gl, { vertex, fragment, uniforms });
     programRef.current = program;
@@ -229,12 +243,14 @@ void main() {
       const rect = container.getBoundingClientRect();
       renderer.setSize(rect.width, rect.height);
       uniforms.iResolution.value = [gl.drawingBufferWidth, gl.drawingBufferHeight, 1];
-      if (blindMinWidth && blindMinWidth > 0) {
-        const maxByMinWidth = Math.max(1, Math.floor(rect.width / blindMinWidth));
-        const effective = blindCount ? Math.min(blindCount, maxByMinWidth) : maxByMinWidth;
+      const bmw = blindMinWidthRef.current;
+      const bc = blindCountRef.current;
+      if (bmw && bmw > 0) {
+        const maxByMinWidth = Math.max(1, Math.floor(rect.width / bmw));
+        const effective = bc ? Math.min(bc, maxByMinWidth) : maxByMinWidth;
         uniforms.uBlindCount.value = Math.max(1, effective);
       } else {
-        uniforms.uBlindCount.value = Math.max(1, blindCount);
+        uniforms.uBlindCount.value = Math.max(1, bc);
       }
       if (firstResizeRef.current) {
         firstResizeRef.current = false;
@@ -255,19 +271,22 @@ void main() {
       const x = (e.clientX - rect.left) * scale;
       const y = (e.clientY - rect.top) * scale;
       mouseTargetRef.current = [x, y];
-      if (mouseDampening <= 0) uniforms.iMouse.value = [x, y];
+      if (mouseDampeningRef.current <= 0) uniforms.iMouse.value = [x, y];
     };
 
     window.addEventListener('pointermove', onPointerMove);
 
     const loop = (t) => {
       rafRef.current = requestAnimationFrame(loop);
+      // Pause when tab is hidden to save CPU/battery
+      if (document.hidden) return;
       uniforms.iTime.value = t * 0.001;
-      if (mouseDampening > 0) {
+      const damp = mouseDampeningRef.current;
+      if (damp > 0) {
         if (!lastTimeRef.current) lastTimeRef.current = t;
         const dt = (t - lastTimeRef.current) / 1000;
         lastTimeRef.current = t;
-        const tau = Math.max(1e-4, mouseDampening);
+        const tau = Math.max(1e-4, damp);
         let factor = 1 - Math.exp(-dt / tau);
         if (factor > 1) factor = 1;
         const target = mouseTargetRef.current;
@@ -277,11 +296,11 @@ void main() {
       } else {
         lastTimeRef.current = t;
       }
-      if (!paused && programRef.current && meshRef.current) {
+      if (!pausedRef.current && programRef.current && meshRef.current) {
         try {
           renderer.render({ scene: meshRef.current });
-        } catch (e) {
-          console.error(e);
+        } catch (err) {
+          console.error(err);
         }
       }
     };
@@ -304,24 +323,45 @@ void main() {
       geometryRef.current = null;
       meshRef.current = null;
       rendererRef.current = null;
+      uniformsRef.current = null;
     };
-  }, [
-    angle,
-    blindCount,
-    blindMinWidth,
-    dpr,
-    distortAmount,
-    gradientColors,
-    mirrorGradient,
-    mixBlendMode,
-    mouseDampening,
-    noise,
-    paused,
-    shineDirection,
-    spotlightOpacity,
-    spotlightRadius,
-    spotlightSoftness,
-  ]);
+    // Only re-run on dpr change (requires a new renderer/canvas).
+    // All other props are applied to uniforms via the effect below.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dpr]);
+
+  // Apply scalar/color uniform updates without reinitializing WebGL.
+  useEffect(() => {
+    const u = uniformsRef.current;
+    if (!u) return;
+    u.uAngle.value = (angle * Math.PI) / 180;
+    u.uNoise.value = noise;
+    u.uSpotlightRadius.value = spotlightRadius;
+    u.uSpotlightSoftness.value = spotlightSoftness;
+    u.uSpotlightOpacity.value = spotlightOpacity;
+    u.uMirror.value = mirrorGradient ? 1 : 0;
+    u.uDistort.value = distortAmount;
+    u.uShineFlip.value = shineDirection === 'right' ? 1 : 0;
+    // blindCount: apply immediately, but resize will also recompute using refs
+    const bmw = blindMinWidthRef.current;
+    if (!bmw || bmw <= 0) u.uBlindCount.value = Math.max(1, blindCount);
+  }, [angle, noise, spotlightRadius, spotlightSoftness, spotlightOpacity, mirrorGradient, distortAmount, shineDirection, blindCount]);
+
+  // Apply gradient color changes without reinitializing WebGL.
+  useEffect(() => {
+    const u = uniformsRef.current;
+    if (!u) return;
+    const { arr, count } = prepStops(gradientColors);
+    u.uColor0.value = arr[0];
+    u.uColor1.value = arr[1];
+    u.uColor2.value = arr[2];
+    u.uColor3.value = arr[3];
+    u.uColor4.value = arr[4];
+    u.uColor5.value = arr[5];
+    u.uColor6.value = arr[6];
+    u.uColor7.value = arr[7];
+    u.uColorCount.value = count;
+  }, [gradientColors]);
 
   return (
     <div
