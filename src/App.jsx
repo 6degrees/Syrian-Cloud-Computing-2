@@ -127,7 +127,7 @@ const s = {
     padding: '42px 36px',
     background: 'linear-gradient(180deg, rgba(15,20,16,0.58), rgba(10,13,12,0.78))',
   },
-  introGrid: { display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 32, alignItems: 'stretch' },
+  introGrid: { display: 'grid', gridTemplateColumns: '1fr', gap: 28, alignItems: 'stretch' },
   introTextWrap: { paddingRight: 8 },
   introVisual: {
     position: 'relative',
