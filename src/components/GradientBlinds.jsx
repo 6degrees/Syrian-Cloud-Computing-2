@@ -55,6 +55,7 @@ const GradientBlinds = ({
   const hasUserPointerRef = useRef(false);
   const lastTimeRef = useRef(0);
   const firstResizeRef = useRef(true);
+  const autoStartTimeRef = useRef(null);
 
   // Live prop refs — updated on every render so the animation loop and
   // event handlers see the latest values without re-initializing WebGL.
@@ -352,11 +353,14 @@ void main() {
         const range = autoAnimateRangeRef.current;
         const speed = autoAnimateSpeedRef.current;
         const ampX = w * range;
-        const ampY = h * range * 0.7;
-        const tt = t * 0.001 * speed;
+        const ampY = h * range * 0.78;
+        if (autoStartTimeRef.current == null) autoStartTimeRef.current = t;
+        const tt = (t - autoStartTimeRef.current) * 0.001 * speed;
+        // Center -> top-left -> bottom-right -> top-left (repeat).
+        const diag = Math.sin(tt);
         mouseTargetRef.current = [
-          cx + (Math.cos(tt) + Math.sin(tt * 0.62) * 0.2) * ampX,
-          cy + (Math.sin(tt * 1.08) + Math.cos(tt * 0.48) * 0.12) * ampY,
+          cx + diag * ampX,
+          cy - diag * ampY,
         ];
       }
 
