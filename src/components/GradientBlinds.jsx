@@ -27,6 +27,7 @@ const GradientBlinds = ({
   dpr,
   paused = false,
   autoAnimate = false,
+  mobileDynamicSpotlight = false,
   disablePointerInteraction = false,
   autoAnimateSpeed = 0.35,
   autoAnimateRange = 0.22,
@@ -71,6 +72,11 @@ const GradientBlinds = ({
   useEffect(() => { mouseDampeningRef.current = mouseDampening; }, [mouseDampening]);
   useEffect(() => { blindCountRef.current = blindCount; blindMinWidthRef.current = blindMinWidth; }, [blindCount, blindMinWidth]);
   useEffect(() => { autoAnimateRef.current = autoAnimate; }, [autoAnimate]);
+  useEffect(() => {
+    const u = uniformsRef.current;
+    if (!u) return;
+    u.uDynamicSpotlight.value = mobileDynamicSpotlight ? 1 : 0;
+  }, [mobileDynamicSpotlight]);
   useEffect(() => { disablePointerInteractionRef.current = disablePointerInteraction; }, [disablePointerInteraction]);
   useEffect(() => { autoAnimateSpeedRef.current = autoAnimateSpeed; }, [autoAnimateSpeed]);
   useEffect(() => { autoAnimateRangeRef.current = autoAnimateRange; }, [autoAnimateRange]);
@@ -126,6 +132,7 @@ uniform float uMirror;
 uniform float uDistort;
 uniform float uShineFlip;
 uniform float uFrost;
+uniform float uDynamicSpotlight;
 uniform vec3  uColor0;
 uniform vec3  uColor1;
 uniform vec3  uColor2;
@@ -249,6 +256,13 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     col += sparkle * (0.5 + 0.3 * edgeMask) * uFrost;
     col += (rand(gl_FragCoord.xy) - 0.5) * uNoise * 0.05;
 
+    // Mobile-only: let moving spotlight dominate over fixed bright bands.
+    if (uDynamicSpotlight > 0.5) {
+      float mobileFalloff = smoothstep(1.0, 0.0, clamp(dn, 0.0, 1.0));
+      col += spotlightTint * mobileFalloff * 0.22;
+      col -= vec3(stripeAA * 0.16);
+    }
+
     fragColor = vec4(col, 1.0);
 }
 
@@ -274,6 +288,7 @@ void main() {
       uDistort: { value: distortAmount },
       uShineFlip: { value: shineDirection === 'right' ? 1 : 0 },
       uFrost: { value: 0.9 },
+      uDynamicSpotlight: { value: mobileDynamicSpotlight ? 1 : 0 },
       uColor0: { value: colorArr[0] },
       uColor1: { value: colorArr[1] },
       uColor2: { value: colorArr[2] },

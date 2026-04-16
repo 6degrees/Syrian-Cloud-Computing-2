@@ -36,6 +36,7 @@ export default function Hero() {
           // Keep autonomous hover-like motion always on; desktop pointer
           // interaction naturally takes over once the user moves the cursor.
           autoAnimate
+          mobileDynamicSpotlight={isMobileView}
           disablePointerInteraction={isMobileView}
           autoAnimateSpeed={0.45}
           autoAnimateRange={0.26}
