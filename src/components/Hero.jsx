@@ -33,10 +33,12 @@ export default function Hero() {
       <div style={s.blindsWrap} ref={bgRef}>
         <GradientBlinds
           gradientColors={HERO_GRADIENT_COLORS}
-          autoAnimate={isMobileView}
+          // Keep autonomous hover-like motion always on; desktop pointer
+          // interaction naturally takes over once the user moves the cursor.
+          autoAnimate
           disablePointerInteraction={isMobileView}
-          autoAnimateSpeed={0.35}
-          autoAnimateRange={0.22}
+          autoAnimateSpeed={0.45}
+          autoAnimateRange={0.26}
           angle={-35}
           noise={0}
           blindCount={14}
