@@ -25,7 +25,7 @@ export const s = {
   heroContent: { position: 'relative', zIndex: 10, textAlign: 'center', padding: '0 24px', maxWidth: 1160 },
   badge: { display: 'inline-flex', alignItems: 'center', gap: 8, padding: '7px 16px', border: '1px solid rgba(211,185,136,0.25)', borderRadius: 9999, background: 'rgba(211,185,136,0.05)', fontSize: 12, fontWeight: 500, color: C.gold, letterSpacing: '0.04em', marginBottom: 32, fontFamily: SFText },
   badgeDot: { width: 5, height: 5, borderRadius: '50%', background: C.gold },
-  h1: { fontFamily: SF, fontSize: 'clamp(36px,5.8vw,72px)', fontWeight: 800, lineHeight: 0.98, letterSpacing: '-0.025em', color: C.text, marginBottom: 24, maxWidth: 1080, marginInline: 'auto' },
+  h1: { fontFamily: SF, fontSize: 'clamp(36px,5.8vw,72px)', fontWeight: 700, lineHeight: 0.98, letterSpacing: '-0.025em', color: C.text, marginBottom: 24, maxWidth: 1080, marginInline: 'auto' },
   heroSub: { fontSize: 'clamp(15px,1.5vw,18px)', color: C.muted, lineHeight: 1.65, maxWidth: 700, margin: '0 auto 40px', fontFamily: SFText },
   heroBtns: { display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' },
   btnPrimary: { padding: '14px 32px', background: C.text, color: C.bg, border: 'none', borderRadius: 9999, fontFamily: SFText, fontSize: 14, fontWeight: 500, transition: 'background 0.25s, transform 0.15s', textDecoration: 'none', display: 'inline-block' },
@@ -138,7 +138,7 @@ export const s = {
 
   ctaSection: { position: 'relative', overflow: 'hidden', textAlign: 'center', padding: '140px 48px', background: C.bg },
   ctaGlow: { position: 'absolute', width: 900, height: 500, left: '50%', top: '50%', transform: 'translate(-50%,-50%)', background: 'radial-gradient(ellipse, rgba(37,64,58,0.5) 0%, transparent 70%)', pointerEvents: 'none' },
-  ctaH2: { fontFamily: SF, fontSize: 'clamp(36px,5vw,60px)', fontWeight: 800, lineHeight: 1.06, letterSpacing: '-0.025em', color: C.text, marginBottom: 20 },
+  ctaH2: { fontFamily: SF, fontSize: 'clamp(36px,5vw,60px)', fontWeight: 700, lineHeight: 1.06, letterSpacing: '-0.025em', color: C.text, marginBottom: 20 },
   ctaSub: { fontSize: 16, color: C.muted, margin: '0 auto 44px', maxWidth: 440, lineHeight: 1.65, fontFamily: SFText },
   btnGold: { padding: '16px 40px', background: C.gold, color: C.bg, border: 'none', borderRadius: 9999, fontFamily: SFText, fontSize: 15, fontWeight: 500, textDecoration: 'none', display: 'inline-block' },
   ctaSecondary: { fontSize: 13.5, color: C.muted, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 4, fontFamily: SFText, marginTop: 16 },
