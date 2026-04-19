@@ -1,4 +1,4 @@
-import { LanguageProvider } from './i18n/LanguageContext';
+import { LanguageProvider, useLang } from './i18n/LanguageContext';
 import GlobalStyles from './components/GlobalStyles';
 import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
@@ -10,18 +10,27 @@ import WhyChooseUs from './components/WhyChooseUs';
 import CTASection from './components/CTASection';
 import Footer from './components/Footer';
 
+function SkipLink() {
+  const { lang } = useLang();
+  const label = lang === 'ar' ? 'تخطِّ إلى المحتوى' : 'Skip to content';
+  return <a href="#main" className="skip-link">{label}</a>;
+}
+
 export default function App() {
   return (
     <LanguageProvider>
       <GlobalStyles />
+      <SkipLink />
       <CustomCursor />
       <Navbar />
-      <Hero />
-      <StatsBar />
-      <Introduction />
-      <Services />
-      <WhyChooseUs />
-      <CTASection />
+      <main id="main" tabIndex={-1}>
+        <Hero />
+        <StatsBar />
+        <Introduction />
+        <Services />
+        <WhyChooseUs />
+        <CTASection />
+      </main>
       <Footer />
     </LanguageProvider>
   );

@@ -1,4 +1,5 @@
 import { s } from '../styles';
+import bgImage from '../assets/Background.png';
 import useReveal from '../hooks/useReveal';
 import { useLang } from '../i18n/LanguageContext';
 
@@ -8,16 +9,30 @@ export default function CTASection() {
 
   return (
     <section style={s.ctaSection} id="cta">
-      <div style={s.ctaGlow} />
+      {/* Background image — lazy-loaded to defer the ~570KB download */}
+      <img
+        src={bgImage}
+        alt=""
+        role="presentation"
+        loading="lazy"
+        decoding="async"
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          zIndex: 0,
+          pointerEvents: 'none',
+        }}
+      />
+      {/* Dark overlay to keep text readable */}
       <div
         style={{
           position: 'absolute',
-          width: 400,
-          height: 200,
-          left: '50%',
-          top: '50%',
-          transform: 'translate(-50%,-50%)',
-          background: 'radial-gradient(ellipse, rgba(211,185,136,0.06) 0%, transparent 70%)',
+          inset: 0,
+          zIndex: 0,
+          background: 'radial-gradient(ellipse 80% 70% at 50% 50%, rgba(10,13,12,0.45) 0%, rgba(10,13,12,0.82) 100%)',
           pointerEvents: 'none',
         }}
       />

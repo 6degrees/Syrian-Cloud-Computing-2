@@ -21,9 +21,9 @@ function ServiceCard({ item, delay, learnMoreLabel }) {
       onMouseLeave={() => setHovered(false)}
     >
       <div style={s.cardTopBorder(hovered)} />
-      <span style={s.cardNum}>{item.num}</span>
+      <span style={s.cardNum} dir="ltr">{item.num}</span>
       <div style={s.cardIcon} aria-hidden="true">{icons[item.icon]}</div>
-      <div style={s.cardTitle} className="card-title">{item.title}</div>
+      <h3 style={s.cardTitle} className="card-title">{item.title}</h3>
       <div style={s.cardDesc} className="card-desc">{item.desc}</div>
       <a
         href="#cta"
