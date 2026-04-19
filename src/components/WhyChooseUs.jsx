@@ -5,7 +5,7 @@ import { useLang } from '../i18n/LanguageContext';
 
 // Light-theme overrides for the white background
 const light = {
-  section: { ...s.whySection, background: '#F1EDE6', borderColor: '#E0DBD3' },
+  section: { ...s.whySection, background: '#F1EDE6', borderTop: '1px solid #E0DBD3', borderBottom: '1px solid #E0DBD3' },
   eyebrow: { ...s.eyebrow, color: '#3A5F58' },
   h2: { ...s.h2, color: '#111' },
   subText: { ...s.subText, color: '#555', marginBottom: 32, maxWidth: 430 },

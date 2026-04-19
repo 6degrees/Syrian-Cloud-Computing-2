@@ -1,5 +1,5 @@
 import { s } from '../styles';
-import bgImage from '../assets/Background.png';
+import bgImage from '../assets/Background.jpg';
 import useReveal from '../hooks/useReveal';
 import { useLang } from '../i18n/LanguageContext';
 

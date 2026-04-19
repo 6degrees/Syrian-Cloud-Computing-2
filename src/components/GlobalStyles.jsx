@@ -49,11 +49,11 @@ export default function GlobalStyles() {
         51%  { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
         100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
       }
-      .hero-line-1  { animation: fadeUp 0.8s 0.3s both ease-out; }
-      .hero-line-2  { animation: fadeUp 0.8s 0.46s both ease-out; }
-      .hero-sub     { animation: fadeUp 0.8s 0.62s both ease-out; }
-      .hero-btns    { animation: fadeUp 0.8s 0.78s both ease-out; }
-      .scroll-ind   { animation: fadeUpScroll 0.8s 1.1s both ease-out; }
+      .hero-line-1  { animation: fadeUp 0.8s 0.1s both ease-out; }
+      .hero-line-2  { animation: fadeUp 0.8s 0.26s both ease-out; }
+      .hero-sub     { animation: fadeUp 0.8s 0.42s both ease-out; }
+      .hero-btns    { animation: fadeUp 0.8s 0.58s both ease-out; }
+      .scroll-ind   { animation: fadeUpScroll 0.8s 0.9s both ease-out; }
       .scroll-line  { animation: scrollDrop 1.8s 1.5s ease-in-out infinite; }
       .nav-link-el  { position:relative; padding-bottom:2px; }
       .nav-link-el::after { content:''; position:absolute; bottom:0; left:0; width:100%; height:1px; background:${C.gold}; transform:scaleX(0); transform-origin:left; transition:transform 0.3s ease; }

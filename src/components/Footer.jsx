@@ -11,7 +11,6 @@ export default function Footer() {
   const footerNav = [
     ['services', t.footer.navLinks.services],
     ['why', t.footer.navLinks.why],
-    ['cta', t.footer.navLinks.insights],
     ['cta', t.footer.navLinks.contact],
   ];
 
