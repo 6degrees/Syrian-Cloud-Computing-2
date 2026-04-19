@@ -56,6 +56,10 @@ export default function GlobalStyles() {
         .footer-top-grid { grid-template-columns: 1fr 1fr !important; }
         .footer-brand-full { grid-column: 1 / -1 !important; }
       }
+      @media (max-width: 560px) {
+        .intro-cloud-grid { grid-template-columns: 1fr !important; }
+        .intro-cloud-photo-first { border-inline-end: none !important; border-block-end: 1px solid ${C.border}; }
+      }
       @media (max-width: 768px) {
         .nav-links-hide { display: none !important; }
         .stats-grid { grid-template-columns: repeat(2,1fr) !important; }

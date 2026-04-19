@@ -48,9 +48,9 @@ export const translations = {
       eyebrow: 'من نحن',
       title: 'أصبح التحول الرقمي ركيزة أساسية في إعادة تشكيل الصناعات',
       body: 'أصبح التحول الرقمي ركيزة أساسية في إعادة تشكيل الصناعات وتمكين المؤسسات من الانتقال من العمليات التقليدية إلى الخدمات الرقمية والإلكترونية المتقدمة. مهمتنا دعم هذا التحول من خلال تقديم خدمات حوسبة سحابية موثوقة، ومنصات برمجية حديثة، وحلول رقمية متكاملة تساعد الشركات على رفع الكفاءة، وتحسين تجربة العملاء، وفتح فرص جديدة لتوليد الإيرادات.',
-      visualLabel: 'نظرة تشغيلية',
-      visualTitle: 'لوحة التحكم في التحول الرقمي',
-      visualMeta: 'مساحة مخصصة لصورة مستقبلية (فريق العمل أو مركز البيانات أو لوحات تحكم) تنسجم مع الطابع الداكن للهوية.',
+      visualLabel: 'نطاق عمل السورية للحوسبة السحابية',
+      visualTitle: 'بنية سحابية محلية ومنصات رقمية موثوقة',
+      visualMeta: 'نقدّم البنية التحتية كخدمة، والبرمجيات كخدمة مستضافة داخل سوريا، والعمليات المُدارة، والحلول الرقمية للمؤسسات التي تحتاج إلى استمرارية الخدمة، وسيادة البيانات، ونتائج أعمال قابلة للقياس.',
     },
 
     // Services (six approved categories, verbatim descriptions)
@@ -147,7 +147,7 @@ export const translations = {
     tagline: 'Digital Transformation Partner',
 
     nav: {
-      introduction: 'About',
+      introduction: 'About us',
       services: 'Services',
       why: 'Why Us',
       contact: 'Contact',
@@ -179,12 +179,12 @@ export const translations = {
 
     // Introduction (verbatim approved paragraph)
     intro: {
-      eyebrow: 'Introduction',
+      eyebrow: 'About us',
       title: 'Digital transformation is reshaping industries.',
       body: 'Digital transformation has become a key pillar in reshaping industries and enabling organizations to move from traditional operations to advanced digital and e-services. Our mission is to support this transformation by delivering reliable cloud computing services, modern software platforms, and end-to-end digital solutions that help businesses improve efficiency, enhance customer experience, and unlock new revenue opportunities.',
-      visualLabel: 'Operational View',
-      visualTitle: 'Digital Transformation Command View',
-      visualMeta: 'Placeholder area for a future image (team, datacenter, or dashboard) that fits the premium dark theme.',
+      visualLabel: 'Syrian Cloud Computing at a glance',
+      visualTitle: 'Local cloud infrastructure and trusted digital platforms',
+      visualMeta: 'SCC delivers IaaS, locally hosted SaaS, managed operations, and digital services for organizations that need reliability, data residency in Syria, and measurable business outcomes—the same capabilities we design, deploy, and run for our clients.',
     },
 
     // Services (six approved categories, verbatim descriptions)
