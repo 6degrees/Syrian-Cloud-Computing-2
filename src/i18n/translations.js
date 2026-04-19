@@ -25,7 +25,7 @@ export const translations = {
       badge: 'شريك التحول الرقمي',
       line1: 'تمكين التحول الرقمي',
       line2: 'عبر الحوسبة السحابية والبرمجيات والحلول الذكية للأعمال',
-      sub: 'نساعد الشركات والصناعات على تسريع مسيرتها الرقمية عبر خدمات حوسبة سحابية آمنة، واستضافة محلية، وعمليات مُدارة، وحلول برمجية، وتطبيقات موبايل، وخدمات رقمية تعزز الإيرادات.',
+      sub: 'حوسبة سحابية آمنة، واستضافة محلية، وعمليات مُدارة، وخدمات رقمية تعزز الإيرادات — لتسريع رحلتك الرقمية.',
       ctaPrimary: 'ابدأ الآن',
       ctaSecondary: 'اكتشف خدماتنا',
       scroll: 'مرر للأسفل',
@@ -103,9 +103,9 @@ export const translations = {
     // Why / Who We Are
     why: {
       eyebrow: 'لماذا نحن',
-      title: 'السورية لخدمات الحوسبة السحابية',
-      titleLine2: 'كفاءة. موثوقية. احترافية.',
-      body: 'ندعم المؤسسات والجهات الحكومية في السوق السوري ببنية تحتية سحابية آمنة، وعمليات مُدارة، وبرمجيات مستضافة محلياً، وخدمات رقمية تركز على إعادة الإعمار وتوليد الإيرادات.',
+      title: 'كفاءة. موثوقية.',
+      titleLine2: 'احترافية.',
+      body: 'حوسبة سحابية آمنة، وعمليات مُدارة، وبرمجيات محلية للمؤسسات والجهات الحكومية — بتركيز على إعادة الإعمار وتوليد الإيرادات.',
       cta: 'تواصل مع فريقنا',
       features: [
         { num: '01', title: 'الكفاءة', desc: 'خدمات مصممة لأعلى أداء مع تكاليف تشغيل متوازنة تلائم واقع السوق السوري.' },
@@ -160,7 +160,7 @@ export const translations = {
       badge: 'Digital Transformation Partner',
       line1: 'Empowering Digital Transformation',
       line2: 'Through Cloud, Software, and Smart Business Solutions',
-      sub: 'We help businesses and industries accelerate their digital journey through secure cloud computing services, local hosting, managed operations, software solutions, mobile applications, and revenue-driven digital services.',
+      sub: 'Secure cloud, local hosting, managed operations, and revenue-driven digital services — engineered to accelerate your digital journey.',
       ctaPrimary: 'Get Started',
       ctaSecondary: 'Explore Services',
       scroll: 'Scroll',
@@ -236,9 +236,9 @@ export const translations = {
 
     why: {
       eyebrow: 'Why Us',
-      title: 'Syrian Company for Cloud Computing Services',
-      titleLine2: 'Efficiency. Reliability. Professionalism.',
-      body: 'We support businesses and government entities in the Syrian market with secure cloud infrastructure, managed operations, locally hosted software, and digital services focused on reconstruction and revenue generation.',
+      title: 'Efficiency. Reliability.',
+      titleLine2: 'Professionalism.',
+      body: 'Secure cloud, managed operations, and locally hosted software for Syrian businesses and government — focused on reconstruction and revenue.',
       cta: 'Talk with our team',
       features: [
         { num: '01', title: 'Efficiency', desc: 'Services engineered for peak performance with operating costs tuned for the Syrian market.' },

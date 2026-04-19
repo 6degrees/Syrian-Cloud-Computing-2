@@ -35,6 +35,10 @@
     </style>
   </head>
   <body>
+    <script>
+      // Sync lang/dir before first paint to avoid RTL↔LTR flash
+      (function(){var l=localStorage.getItem('scc.lang');if(l==='en'){document.documentElement.lang='en';document.documentElement.dir='ltr';}})();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

@@ -57,10 +57,6 @@ export default function Hero() {
       <div style={s.vignetteBottom} />
 
       <div style={s.heroContent} ref={contentRef}>
-        <div style={s.badge} className="hero-badge">
-          <span style={s.badgeDot} className="badge-dot" />
-          {t.hero.badge}
-        </div>
         <h1 style={s.h1} className="hero-h1">
           <span style={{ display: 'block', opacity: 0, transform: 'translateY(40px)' }} className="hero-line-1">
             {t.hero.line1}

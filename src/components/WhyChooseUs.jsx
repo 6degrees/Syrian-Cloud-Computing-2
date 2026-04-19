@@ -3,13 +3,29 @@ import useReveal from '../hooks/useReveal';
 import { scrollToId } from '../utils/scroll';
 import { useLang } from '../i18n/LanguageContext';
 
+// Light-theme overrides for the white background
+const light = {
+  section: { ...s.whySection, background: '#F1EDE6', borderColor: '#E0DBD3' },
+  eyebrow: { ...s.eyebrow, color: '#3A5F58' },
+  h2: { ...s.h2, color: '#111' },
+  subText: { ...s.subText, color: '#555', marginBottom: 32, maxWidth: 430 },
+  whyCta: { ...s.whyCta, color: '#3A5F58', borderBottomColor: 'rgba(58,95,88,0.35)' },
+  featureRow: (visible, i) => {
+    const base = s.featureRow(visible, i);
+    return { ...base, borderBottomColor: 'rgba(0,0,0,0.08)' };
+  },
+  featureNum: { ...s.featureNum, color: '#999' },
+  featureTitle: { ...s.featureTitle, color: '#111' },
+  featureDesc: { ...s.featureDesc, color: '#666' },
+};
+
 function FeatureRow({ item, index, visible }) {
   return (
-    <div style={s.featureRow(visible, index)}>
-      <div style={s.featureNum}>{item.num}</div>
+    <div style={light.featureRow(visible, index)}>
+      <div style={light.featureNum} dir="ltr">{item.num}</div>
       <div>
-        <div style={s.featureTitle}>{item.title}</div>
-        <div style={s.featureDesc}>{item.desc}</div>
+        <div style={light.featureTitle}>{item.title}</div>
+        <div style={light.featureDesc}>{item.desc}</div>
       </div>
     </div>
   );
@@ -21,7 +37,7 @@ export default function WhyChooseUs() {
   const { t, isRTL } = useLang();
 
   return (
-    <section style={s.whySection} id="why">
+    <section style={light.section} id="why">
       <div style={s.inner}>
         <div style={s.whyGrid} className="why-grid">
           <div
@@ -34,12 +50,12 @@ export default function WhyChooseUs() {
             }}
             className="why-left-sticky"
           >
-            <div style={s.eyebrow} className="eyebrow-line">{t.why.eyebrow}</div>
-            <h2 style={s.h2} className="section-h2">{t.why.title}<br />{t.why.titleLine2}</h2>
-            <p style={{ ...s.subText, marginBottom: 32, maxWidth: 430 }} className="section-subtext">{t.why.body}</p>
+            <div style={light.eyebrow} className="eyebrow-line">{t.why.eyebrow}</div>
+            <h2 style={light.h2} className="section-h2">{t.why.title}<br />{t.why.titleLine2}</h2>
+            <p style={light.subText} className="section-subtext">{t.why.body}</p>
             <a
               href="#cta"
-              style={s.whyCta}
+              style={light.whyCta}
               className="why-cta"
               onClick={(e) => { e.preventDefault(); scrollToId('cta'); }}
             >

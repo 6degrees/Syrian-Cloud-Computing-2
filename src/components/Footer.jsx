@@ -61,29 +61,8 @@ export default function Footer() {
           </div>
         </div>
         <div style={s.footerBottom}>
-          <div style={s.footerCopy}>© {year} {t.companyName}. {t.footer.rights}</div>
-          <div style={s.footerSocials}>
-            <a
-              href="https://www.linkedin.com/"
-              style={s.socialLink}
-              className="social-link"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn (opens in new tab)"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://twitter.com/"
-              style={s.socialLink}
-              className="social-link"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Twitter (opens in new tab)"
-            >
-              Twitter
-            </a>
-          </div>
+          <div style={s.footerCopy}>© <span dir="ltr">{year}</span> {t.companyName}. {t.footer.rights}</div>
+          <span style={s.socialLink}>{t.tagline}</span>
         </div>
       </div>
     </footer>
