@@ -22,8 +22,8 @@ export const translations = {
 
     // Hero
     hero: {
-      line1: 'تمكين التحول الرقمي',
-      line2: 'عبر السحابة والبرمجيات والحلول الذكية',
+      line1: 'تمكين النمو الرقمي',
+      line2: 'عبر السحابة وحلول البرمجيات',
       sub: 'حوسبة سحابية آمنة، واستضافة محلية، وعمليات مُدارة، وخدمات رقمية تعزز الإيرادات, لتسريع رحلتك الرقمية.',
       ctaPrimary: 'ابدأ الآن',
       ctaSecondary: 'اكتشف خدماتنا',
@@ -141,8 +141,8 @@ export const translations = {
 
     // Hero
     hero: {
-      line1: 'Empowering Digital Transformation',
-      line2: 'Through Cloud, Software, and Smart Business Solutions',
+      line1: 'Empowering Digital Growth',
+      line2: 'Through Cloud and Software Solutions',
       sub: 'Secure cloud, local hosting, managed operations, and revenue-driven digital services, engineered to accelerate your digital journey.',
       ctaPrimary: 'Get Started',
       ctaSecondary: 'Explore Services',
