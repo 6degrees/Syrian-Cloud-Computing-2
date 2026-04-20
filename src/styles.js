@@ -81,7 +81,7 @@ export const s = {
   featureTitle: { fontFamily: SF, fontSize: 17, fontWeight: 600, color: C.text, marginBottom: 6 },
   featureDesc: { fontSize: 13.5, color: C.muted, lineHeight: 1.65, fontFamily: SFText },
 
-  ctaH2: { fontFamily: SF, fontSize: 'clamp(36px,5vw,60px)', fontWeight: 600, lineHeight: 1.06, letterSpacing: '-0.025em', color: C.text, marginBottom: 20 },
+  ctaH2: { fontFamily: SF, fontSize: 'clamp(36px,5vw,60px)', fontWeight: 550, lineHeight: 1.06, letterSpacing: '-0.025em', color: C.text, marginBottom: 20 },
   ctaSub: { fontSize: 16, color: C.muted, margin: '0 auto 44px', maxWidth: 440, lineHeight: 1.65, fontFamily: SFText },
   btnGold: { padding: '16px 40px', background: C.gold, color: C.bg, border: 'none', borderRadius: 9999, fontFamily: SFText, fontSize: 15, fontWeight: 500, textDecoration: 'none', display: 'inline-block' },
 

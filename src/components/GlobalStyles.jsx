@@ -68,6 +68,7 @@ export default function GlobalStyles() {
       #why .section-subtext { color: #555 !important; }
       .lang-toggle { background:#f7f2e8; color:${C.bg}; border:none; border-radius:9999px; padding:6px 14px; font-size:12px; font-weight:600; letter-spacing:0.08em; font-family:${SFText}; cursor:pointer; }
       .lang-toggle:hover { background:#efe8da; }
+      html[dir="ltr"] .lang-toggle { font-weight: 300; }
 
       /* Mobile hamburger button — hidden on desktop */
       .nav-menu-btn {
