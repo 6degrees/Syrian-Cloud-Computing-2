@@ -9,9 +9,9 @@ export default function Footer() {
   const { t } = useLang();
 
   const footerNav = [
-    ['services', t.footer.navLinks.services],
-    ['why', t.footer.navLinks.why],
-    ['cta', t.footer.navLinks.contact],
+    ['intro', t.nav.introduction],
+    ['services', t.nav.services],
+    ['why', t.nav.why],
   ];
 
   return (
