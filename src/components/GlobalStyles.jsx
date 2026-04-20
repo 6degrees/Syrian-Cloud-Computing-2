@@ -66,8 +66,8 @@ export default function GlobalStyles() {
       #why .why-cta:hover { border-color: #3A5F58 !important; }
       #why .section-h2 { color: #111 !important; }
       #why .section-subtext { color: #555 !important; }
-      .lang-toggle { background:${C.text}; color:${C.bg}; border:none; border-radius:9999px; padding:6px 14px; font-size:12px; font-weight:600; letter-spacing:0.08em; font-family:${SFText}; cursor:pointer; }
-      .lang-toggle:hover { background:${C.gold}; }
+      .lang-toggle { background:#f7f2e8; color:${C.bg}; border:none; border-radius:9999px; padding:6px 14px; font-size:12px; font-weight:600; letter-spacing:0.08em; font-family:${SFText}; cursor:pointer; }
+      .lang-toggle:hover { background:#efe8da; }
 
       /* Mobile hamburger button — hidden on desktop */
       .nav-menu-btn {

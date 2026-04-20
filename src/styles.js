@@ -23,7 +23,7 @@ export const s = {
   vignette: { position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 80% 70% at 50% 50%, transparent 30%, #0A0D0C 100%)', zIndex: 1, pointerEvents: 'none' },
   vignetteBottom: { position: 'absolute', bottom: 0, left: 0, right: 0, height: 200, background: 'linear-gradient(to bottom, transparent, #0A0D0C)', zIndex: 2, pointerEvents: 'none' },
   heroContent: { position: 'relative', zIndex: 10, textAlign: 'center', width: '100%', maxWidth: 1200 },
-  h1: { fontFamily: SF, fontSize: 'clamp(36px,5.8vw,72px)', fontWeight: 800, lineHeight: 0.98, letterSpacing: '-0.025em', color: C.text, marginBottom: 24, marginInline: 'auto' },
+  h1: { fontFamily: SF, fontSize: 'clamp(36px,5.8vw,72px)', fontWeight: 600, lineHeight: 0.98, letterSpacing: '-0.025em', color: C.text, marginBottom: 24, marginInline: 'auto' },
   heroSub: { fontSize: 'clamp(15px,1.5vw,18px)', color: C.muted, lineHeight: 1.65, maxWidth: 860, margin: '0 auto 40px', fontFamily: SFText },
   heroBtns: { display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' },
   btnPrimary: { padding: '14px 32px', background: C.text, color: C.bg, border: 'none', borderRadius: 9999, fontFamily: SFText, fontSize: 14, fontWeight: 500, transition: 'background 0.25s, transform 0.15s', textDecoration: 'none', display: 'inline-block' },
@@ -41,7 +41,7 @@ export const s = {
 
   introSection: { padding: '120px 48px', background: C.bg },
 
-  servicesSection: { padding: '120px 48px', background: C.bg },
+  servicesSection: { padding: '40px 48px 120px', background: C.bg },
   servicesHeadWrap: {
     border: `1px solid ${C.border}`,
     borderRadius: '12px 12px 0 0',
@@ -61,7 +61,7 @@ export const s = {
 
   section: (bg = C.bg) => ({ padding: '120px 48px', background: bg }),
   inner: { maxWidth: 1200, margin: '0 auto' },
-  h2: { fontFamily: SF, fontSize: 'clamp(32px,4vw,52px)', fontWeight: 600, lineHeight: 1.08, letterSpacing: '-0.02em', color: C.text, marginBottom: 20 },
+  h2: { fontFamily: SF, fontSize: 'clamp(32px,4vw,52px)', fontWeight: 500, lineHeight: 1.08, letterSpacing: '-0.02em', color: C.text, marginBottom: 20 },
   subText: { fontSize: 16, color: C.muted, lineHeight: 1.65, maxWidth: 480, fontFamily: SFText },
 
   servicesGrid: { display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 1, background: C.border, borderTop: `1px solid ${C.border}`, marginTop: 64 },
@@ -81,13 +81,24 @@ export const s = {
   featureTitle: { fontFamily: SF, fontSize: 17, fontWeight: 600, color: C.text, marginBottom: 6 },
   featureDesc: { fontSize: 13.5, color: C.muted, lineHeight: 1.65, fontFamily: SFText },
 
-  ctaSection: { position: 'relative', overflow: 'hidden', textAlign: 'center', padding: '120px 48px', background: C.bg },
-  ctaH2: { fontFamily: SF, fontSize: 'clamp(36px,5vw,60px)', fontWeight: 800, lineHeight: 1.06, letterSpacing: '-0.025em', color: C.text, marginBottom: 20 },
+  ctaH2: { fontFamily: SF, fontSize: 'clamp(36px,5vw,60px)', fontWeight: 600, lineHeight: 1.06, letterSpacing: '-0.025em', color: C.text, marginBottom: 20 },
   ctaSub: { fontSize: 16, color: C.muted, margin: '0 auto 44px', maxWidth: 440, lineHeight: 1.65, fontFamily: SFText },
   btnGold: { padding: '16px 40px', background: C.gold, color: C.bg, border: 'none', borderRadius: 9999, fontFamily: SFText, fontSize: 15, fontWeight: 500, textDecoration: 'none', display: 'inline-block' },
 
-  footer: { background: '#060908', borderTop: `1px solid ${C.border}`, padding: '64px 48px 36px' },
-  footerInner: { maxWidth: 1200, margin: '0 auto' },
+  ctaFooterWrap: { position: 'relative', overflow: 'hidden' },
+  ctaFooterBgImage: { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0, pointerEvents: 'none' },
+  ctaFooterBgOverlay: { position: 'absolute', inset: 0, zIndex: 0, background: 'radial-gradient(ellipse 80% 70% at 50% 50%, rgba(10,13,12,0.45) 0%, rgba(10,13,12,0.82) 100%)', pointerEvents: 'none' },
+
+  ctaSection: { position: 'relative', overflow: 'hidden', textAlign: 'center', padding: '120px 48px', background: 'transparent', zIndex: 1 },
+  footer: { position: 'relative', overflow: 'hidden', background: 'transparent', borderTop: `1px solid rgba(92,127,120,0.24)`, padding: '64px 48px 36px', zIndex: 1 },
+  footerFade: {
+    position: 'absolute',
+    inset: 0,
+    background: 'linear-gradient(to top, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.78) 58%, rgba(0,0,0,0.46) 84%, rgba(0,0,0,0.12) 95%, rgba(0,0,0,0) 100%)',
+    pointerEvents: 'none',
+    zIndex: 0,
+  },
+  footerInner: { maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 1 },
   footerTop: { display: 'grid', gridTemplateColumns: '1.4fr 1fr 1fr', gap: 64, marginBottom: 56 },
   footerColTitle: { fontFamily: SFMono, fontSize: 10, letterSpacing: '0.18em', textTransform: 'uppercase', color: C.green, marginBottom: 20 },
   footerLink: { fontSize: 13.5, color: C.muted, textDecoration: 'none', display: 'block', marginBottom: 12, fontFamily: SFText },

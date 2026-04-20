@@ -9,6 +9,8 @@ import Services from './components/Services';
 import WhyChooseUs from './components/WhyChooseUs';
 import CTASection from './components/CTASection';
 import Footer from './components/Footer';
+import bgImage from './assets/Background.jpg';
+import { s } from './styles';
 
 function SkipLink() {
   const { lang } = useLang();
@@ -29,9 +31,20 @@ export default function App() {
         <Introduction />
         <Services />
         <WhyChooseUs />
-        <CTASection />
       </main>
-      <Footer />
+      <div style={s.ctaFooterWrap}>
+        <img
+          src={bgImage}
+          alt=""
+          role="presentation"
+          loading="lazy"
+          decoding="async"
+          style={s.ctaFooterBgImage}
+        />
+        <div style={s.ctaFooterBgOverlay} />
+        <CTASection />
+        <Footer />
+      </div>
     </LanguageProvider>
   );
 }

@@ -16,6 +16,7 @@ export default function Footer() {
 
   return (
     <footer style={s.footer}>
+      <div style={s.footerFade} />
       <div style={s.footerInner}>
         <div style={s.footerTop} className="footer-top-grid">
           <div className="footer-brand-full">

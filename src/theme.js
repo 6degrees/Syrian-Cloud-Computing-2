@@ -9,7 +9,7 @@ export const C = {
   deep: '#162523',
   gold: '#D3B988',
   bronze: '#705F45',
-  text: '#F0EDE6',
+  text: '#f7f2e8',
   muted: '#7a9490',
 };
 

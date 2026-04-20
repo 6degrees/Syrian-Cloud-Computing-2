@@ -16,7 +16,7 @@ export default function Introduction() {
             display: 'grid',
             gridTemplateColumns: '1fr 1fr',
             gap: 56,
-            alignItems: 'center',
+            alignItems: 'stretch',
             opacity: visible ? 1 : 0,
             transform: visible ? 'none' : 'translateY(32px)',
             transition: 'opacity 0.7s ease, transform 0.7s ease',
@@ -28,9 +28,9 @@ export default function Introduction() {
               {t.intro.body}
             </p>
           </div>
-          <div style={{ borderRadius: 12, overflow: 'hidden', border: `1px solid ${C.border}` }}>
+          <div style={{ borderRadius: 12, overflow: 'hidden', border: `1px solid ${C.border}`, height: '100%' }}>
             <img
-              src={`${import.meta.env.BASE_URL}SCCBanner.jpg`}
+              src={`${import.meta.env.BASE_URL}SCCBanner.png`}
               alt={t.companyName}
               loading="lazy"
               decoding="async"
