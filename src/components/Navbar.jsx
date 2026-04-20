@@ -75,9 +75,7 @@ export default function Navbar() {
           >
             {t.nav.langToggle}
           </button>
-          <a href="#cta" style={s.navCta} className="nav-cta nav-cta-desktop" onClick={onNavClick('cta')}>
-            {t.nav.contact} {lang === 'ar' ? '↖' : '↗'}
-          </a>
+          {/* Login CTA hidden until auth is ready */}
           <button
             type="button"
             className="nav-menu-btn"
@@ -99,7 +97,7 @@ export default function Navbar() {
         className={`mobile-drawer${menuOpen ? ' open' : ''}`}
         role="dialog"
         aria-modal="true"
-        aria-label={t.nav.introduction}
+        aria-label={lang === 'ar' ? 'قائمة التنقل' : 'Navigation menu'}
         aria-hidden={!menuOpen}
       >
         <ul className="mobile-drawer-list">
@@ -108,11 +106,7 @@ export default function Navbar() {
               <a href={`#${id}`} onClick={onNavClick(id)}>{label}</a>
             </li>
           ))}
-          <li>
-            <a href="#cta" className="mobile-drawer-cta" onClick={onNavClick('cta')}>
-              {t.nav.contact} {lang === 'ar' ? '↖' : '↗'}
-            </a>
-          </li>
+          {/* Login CTA hidden until auth is ready */}
         </ul>
       </div>
       <div

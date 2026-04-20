@@ -15,17 +15,16 @@ export const translations = {
       introduction: 'من نحن',
       services: 'خدماتنا',
       why: 'لماذا نحن',
-      contact: 'تسجيل الدخول',
-      langToggle: 'EN',
+      contact: 'تواصل معنا',
+      langToggle: 'English',
       backToTop: 'العودة للأعلى',
     },
 
     // Hero
     hero: {
-      badge: 'شريك التحول الرقمي',
       line1: 'تمكين التحول الرقمي',
       line2: 'عبر السحابة والبرمجيات والحلول الذكية',
-      sub: 'حوسبة سحابية آمنة، واستضافة محلية، وعمليات مُدارة، وخدمات رقمية تعزز الإيرادات — لتسريع رحلتك الرقمية.',
+      sub: 'حوسبة سحابية آمنة، واستضافة محلية، وعمليات مُدارة، وخدمات رقمية تعزز الإيرادات, لتسريع رحلتك الرقمية.',
       ctaPrimary: 'ابدأ الآن',
       ctaSecondary: 'اكتشف خدماتنا',
       scroll: 'مرر للأسفل',
@@ -45,27 +44,21 @@ export const translations = {
 
     // Introduction
     intro: {
-      eyebrow: 'رؤيتنا',
-      title: 'مهمتنا تسريع التحول الرقمي في سوريا',
-      body: 'أصبح التحول الرقمي ركيزة أساسية في إعادة تشكيل الصناعات وتمكين المؤسسات من الانتقال من العمليات التقليدية إلى الخدمات الرقمية والإلكترونية المتقدمة. مهمتنا دعم هذا التحول من خلال تقديم خدمات حوسبة سحابية موثوقة، ومنصات برمجية حديثة، وحلول رقمية متكاملة تساعد الشركات على رفع الكفاءة، وتحسين تجربة العملاء، وفتح فرص جديدة لتوليد الإيرادات.',
-      visualLabel: 'نطاق عمل السورية للحوسبة السحابية',
-      visualTitle: 'بنية سحابية محلية ومنصات رقمية موثوقة',
-      visualMeta: 'نقدّم البنية التحتية كخدمة، والبرمجيات كخدمة مستضافة داخل سوريا، والعمليات المُدارة، والحلول الرقمية للمؤسسات التي تحتاج إلى استمرارية الخدمة، وسيادة البيانات، ونتائج أعمال قابلة للقياس.',
+      title: 'نُسرّع مستقبل سوريا الرقمي.',
+      body: 'تأسست السورية لخدمات الحوسبة السحابية لسد فجوة البنية التحتية الرقمية في سوريا. نقدّم حوسبة سحابية آمنة ومستضافة محلياً، ومنصات برمجية حديثة، وخدمات رقمية مُدارة، لنمنح المؤسسات والجهات الحكومية الأدوات اللازمة لتحديث عملياتها، والحفاظ على سيادة بياناتها، وتحقيق نمو ملموس. مع إعادة إعمار سوريا، نؤمن أن البنية التحتية الرقمية الموثوقة هي الأساس للتعافي الاقتصادي ومرونة المؤسسات.',
     },
 
     // Services (six approved categories)
     services: {
-      eyebrow: 'خدماتنا',
       title: 'ستة مسارات خدمية',
       titleLine2: 'لدعم رحلتك نحو التحول الرقمي',
-      lead: 'من البنية التحتية السحابية والبرمجيات المستضافة محلياً إلى تطبيقات الموبايل والتسويق الرقمي والخدمات الموجّهة للأفراد — باقة متكاملة لدعم الشركات والجهات الحكومية.',
-      learnMore: 'تواصل معنا',
+      lead: 'من البنية التحتية السحابية والبرمجيات المستضافة محلياً إلى تطبيقات الجوال والتسويق الرقمي والخدمات الموجّهة للأفراد, باقة متكاملة لدعم الشركات والجهات الحكومية.',
       items: [
         {
           num: '01',
           icon: 'cloud',
           title: 'الحوسبة السحابية والتحول الرقمي',
-          desc: 'خدمات حوسبة سحابية متقدمة لبناء وترحيل وتشغيل بيئاتك الرقمية بثقة — تحديث البنية التحتية وتعزيز المرونة وتسريع التبني الرقمي.',
+          desc: 'خدمات حوسبة سحابية متقدمة لبناء وترحيل وتشغيل بيئاتك الرقمية بثقة, تحديث البنية التحتية وتعزيز المرونة وتسريع التبني الرقمي.',
         },
         {
           num: '02',
@@ -82,8 +75,8 @@ export const translations = {
         {
           num: '04',
           icon: 'phone',
-          title: 'تطوير تطبيقات الموبايل واستضافتها وتسويقها',
-          desc: 'تصميم وتطوير تطبيقات موبايل مع استضافة موثوقة ودعم تسويقي — لتعزيز التفاعل مع العملاء وفتح قنوات رقمية جديدة.',
+          title: 'تطوير تطبيقات الجوال واستضافتها وتسويقها',
+          desc: 'تصميم وتطوير تطبيقات جوال مع استضافة موثوقة ودعم تسويقي, لتعزيز التفاعل مع العملاء وفتح قنوات رقمية جديدة.',
         },
         {
           num: '05',
@@ -95,17 +88,16 @@ export const translations = {
           num: '06',
           icon: 'users',
           title: 'خدمات رقمية للأفراد لتسريع الإيرادات',
-          desc: 'خدمات B2C تمكّن الشركات من التواصل المباشر مع العملاء النهائيين عبر منصات رقمية وتطبيقات موبايل وحلول تفاعل مبتكرة.',
+          desc: 'خدمات B2C تمكّن الشركات من التواصل المباشر مع العملاء النهائيين عبر منصات رقمية وتطبيقات جوال وحلول تفاعل مبتكرة.',
         },
       ],
     },
 
     // Why / Who We Are
     why: {
-      eyebrow: 'لماذا نحن',
       title: 'كفاءة. موثوقية.',
       titleLine2: 'احترافية.',
-      body: 'حوسبة سحابية آمنة، وعمليات مُدارة، وبرمجيات محلية للمؤسسات والجهات الحكومية — بتركيز على إعادة الإعمار وتوليد الإيرادات.',
+      body: 'حوسبة سحابية آمنة، وعمليات مُدارة، وبرمجيات محلية للمؤسسات والجهات الحكومية, بتركيز على إعادة الإعمار وتوليد الإيرادات.',
       cta: 'تواصل مع فريقنا',
       features: [
         { num: '01', title: 'الكفاءة', desc: 'خدمات مصممة لأعلى أداء مع تكاليف تشغيل متوازنة تلائم واقع السوق السوري.' },
@@ -117,23 +109,16 @@ export const translations = {
 
     // CTA
     cta: {
-      eyebrow: 'الخطوة التالية',
       title: 'جاهز لتسريع رحلة',
       titleLine2: 'تحولك الرقمي؟',
       sub: 'دعنا نصمم لك المزيج المناسب من خدمات الحوسبة السحابية والبرمجيات والخدمات الرقمية لمؤسستك.',
       primary: 'ابدأ رحلتك',
-      secondary: 'تحدث مع مهندس',
     },
 
     // Footer
     footer: {
       description: 'نبني بنية تحتية سحابية موثوقة للمؤسسات والجهات الحكومية في سوريا. حلول محلية بتقنيات عالمية.',
       navigation: 'التنقل',
-      navLinks: {
-        services: 'ماذا نقدّم',
-        why: 'لماذا نحن',
-        contact: 'تواصل',
-      },
       contact: 'للتواصل',
       address: 'دمشق، سوريا',
       rights: 'جميع الحقوق محفوظة.',
@@ -149,17 +134,16 @@ export const translations = {
       introduction: 'About us',
       services: 'Services',
       why: 'Why Us',
-      contact: 'Login',
-      langToggle: 'ع',
+      contact: 'Contact',
+      langToggle: 'العربية',
       backToTop: 'Back to top',
     },
 
     // Hero
     hero: {
-      badge: 'Digital Transformation Partner',
       line1: 'Empowering Digital Transformation',
       line2: 'Through Cloud, Software, and Smart Business Solutions',
-      sub: 'Secure cloud, local hosting, managed operations, and revenue-driven digital services — engineered to accelerate your digital journey.',
+      sub: 'Secure cloud, local hosting, managed operations, and revenue-driven digital services, engineered to accelerate your digital journey.',
       ctaPrimary: 'Get Started',
       ctaSecondary: 'Explore Services',
       scroll: 'Scroll',
@@ -178,27 +162,21 @@ export const translations = {
 
     // Introduction
     intro: {
-      eyebrow: 'Our Vision',
-      title: 'Our mission is to accelerate digital transformation in Syria.',
-      body: 'Digital transformation has become a key pillar in reshaping industries and enabling organizations to move from traditional operations to advanced digital and e-services. Our mission is to support this transformation by delivering reliable cloud computing services, modern software platforms, and end-to-end digital solutions that help businesses improve efficiency, enhance customer experience, and unlock new revenue opportunities.',
-      visualLabel: 'Syrian Cloud Computing at a glance',
-      visualTitle: 'Local cloud infrastructure and trusted digital platforms',
-      visualMeta: 'SCC delivers IaaS, locally hosted SaaS, managed operations, and digital services for organizations that need reliability, data residency in Syria, and measurable business outcomes—the same capabilities we design, deploy, and run for our clients.',
+      title: 'Accelerating Syria\'s digital future.',
+      body: 'The Syrian Company for Cloud Computing Services (SCC) was founded to bridge the digital infrastructure gap in Syria. We provide secure, locally hosted cloud computing, modern software platforms, and managed digital services, giving businesses and government entities the tools they need to modernize operations, maintain data sovereignty, and drive measurable growth. As Syria rebuilds, we believe reliable digital infrastructure is the foundation for economic recovery and institutional resilience.',
     },
 
     // Services (six approved categories)
     services: {
-      eyebrow: 'Services',
       title: 'Six service tracks',
       titleLine2: 'to power your digital transformation',
-      lead: 'From cloud infrastructure and locally hosted software to mobile apps, digital marketing, and B2C services — a full suite built for businesses and government entities.',
-      learnMore: 'Get in touch',
+      lead: 'From cloud infrastructure and locally hosted software to mobile apps, digital marketing, and B2C services, a full suite built for businesses and government entities.',
       items: [
         {
           num: '01',
           icon: 'cloud',
           title: 'Cloud Computing & Digital Transformation',
-          desc: 'Advanced cloud services to build, migrate, and operate your digital environment — modernizing infrastructure, improving scalability, and accelerating digital adoption.',
+          desc: 'Advanced cloud services to build, migrate, and operate your digital environment, modernizing infrastructure, improving scalability, and accelerating digital adoption.',
         },
         {
           num: '02',
@@ -216,7 +194,7 @@ export const translations = {
           num: '04',
           icon: 'phone',
           title: 'Mobile Application Development, Hosting & Marketing',
-          desc: 'Custom mobile apps with reliable hosting and targeted marketing — strengthening customer engagement and opening new digital revenue channels.',
+          desc: 'Custom mobile apps with reliable hosting and targeted marketing, strengthening customer engagement and opening new digital revenue channels.',
         },
         {
           num: '05',
@@ -234,10 +212,9 @@ export const translations = {
     },
 
     why: {
-      eyebrow: 'Why Us',
       title: 'Efficiency. Reliability.',
       titleLine2: 'Professionalism.',
-      body: 'Secure cloud, managed operations, and locally hosted software for Syrian businesses and government — focused on reconstruction and revenue.',
+      body: 'Secure cloud, managed operations, and locally hosted software for Syrian businesses and government, focused on reconstruction and revenue.',
       cta: 'Talk with our team',
       features: [
         { num: '01', title: 'Efficiency', desc: 'Services engineered for peak performance with operating costs tuned for the Syrian market.' },
@@ -248,22 +225,15 @@ export const translations = {
     },
 
     cta: {
-      eyebrow: 'Next Step',
       title: 'Ready to accelerate your',
       titleLine2: 'digital transformation journey?',
       sub: 'Let us design the right mix of cloud, software, and digital services for your organization.',
       primary: 'Start Your Journey',
-      secondary: 'Talk to an engineer',
     },
 
     footer: {
       description: 'Building reliable cloud infrastructure for businesses and government entities across Syria. Local solutions with global technology.',
       navigation: 'Navigation',
-      navLinks: {
-        services: 'What We Do',
-        why: 'Why Us',
-        contact: 'Contact',
-      },
       contact: 'Contact',
       address: 'Damascus, Syria',
       rights: 'All rights reserved.',

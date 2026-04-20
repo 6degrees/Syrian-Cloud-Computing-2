@@ -6,7 +6,6 @@ import { useLang } from '../i18n/LanguageContext';
 // Light-theme overrides for the white background
 const light = {
   section: { ...s.whySection, background: '#F1EDE6', borderTop: '1px solid #E0DBD3', borderBottom: '1px solid #E0DBD3' },
-  eyebrow: { ...s.eyebrow, color: '#3A5F58' },
   h2: { ...s.h2, color: '#111' },
   subText: { ...s.subText, color: '#555', marginBottom: 32, maxWidth: 430 },
   whyCta: { ...s.whyCta, color: '#3A5F58', borderBottomColor: 'rgba(58,95,88,0.35)' },
@@ -14,8 +13,8 @@ const light = {
     const base = s.featureRow(visible, i);
     return { ...base, borderBottomColor: 'rgba(0,0,0,0.08)' };
   },
-  featureNum: { ...s.featureNum, color: '#999' },
-  featureTitle: { ...s.featureTitle, color: '#111' },
+  featureNum: { ...s.featureNum, color: '#111' },
+  featureTitle: { ...s.featureTitle, color: '#3A5F58' },
   featureDesc: { ...s.featureDesc, color: '#666' },
 };
 

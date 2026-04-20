@@ -13,8 +13,8 @@ export const C = {
   muted: '#7a9490',
 };
 
-export const SF = `'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif`;
-export const SFText = `'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif`;
+export const SF = `'Poppins', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif`;
+export const SFText = `'Poppins', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif`;
 export const SFMono = `'SF Mono', ui-monospace, 'Cascadia Code', 'Fira Code', monospace`;
 
 // Stable ref so GradientBlinds doesn't reinit WebGL on every scroll (was causing flicker)

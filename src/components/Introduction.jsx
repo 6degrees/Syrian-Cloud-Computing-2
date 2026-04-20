@@ -1,7 +1,7 @@
 import { s } from '../styles';
+import { C, SFText } from '../theme';
 import useReveal from '../hooks/useReveal';
 import { useLang } from '../i18n/LanguageContext';
-import IntroCloudPhotos from './IntroCloudPhotos';
 
 export default function Introduction() {
   const [ref, visible] = useReveal(0.1);
@@ -11,26 +11,31 @@ export default function Introduction() {
       <div style={s.inner}>
         <div
           ref={ref}
+          className="intro-grid"
           style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: 56,
+            alignItems: 'center',
             opacity: visible ? 1 : 0,
             transform: visible ? 'none' : 'translateY(32px)',
             transition: 'opacity 0.7s ease, transform 0.7s ease',
           }}
         >
-          <div style={s.introGrid} className="intro-grid">
-            <div style={s.introTextWrap}>
-              <h2 style={{ ...s.h2, marginBottom: 14 }} className="section-h2">{t.intro.title}</h2>
-              <p style={{ ...s.subText, maxWidth: 660 }} className="section-subtext">{t.intro.body}</p>
-            </div>
-
-            <div style={s.introVisualCard}>
-              <div style={s.introVisualPlain}>
-                <div style={s.introVisualLabel}>{t.intro.visualLabel}</div>
-                <h3 style={s.introVisualTitle}>{t.intro.visualTitle}</h3>
-                <p style={s.introVisualMeta}>{t.intro.visualMeta}</p>
-                <IntroCloudPhotos />
-              </div>
-            </div>
+          <div>
+            <h2 style={{ ...s.h2, marginBottom: 20 }} className="section-h2">{t.intro.title}</h2>
+            <p style={{ fontSize: 17, color: C.muted, lineHeight: 1.75, fontFamily: SFText }} className="section-subtext">
+              {t.intro.body}
+            </p>
+          </div>
+          <div style={{ borderRadius: 12, overflow: 'hidden', border: `1px solid ${C.border}` }}>
+            <img
+              src={`${import.meta.env.BASE_URL}SCCBanner.jpg`}
+              alt={t.companyName}
+              loading="lazy"
+              decoding="async"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            />
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { C, SFText } from '../theme';
 
-// Arabic font stack — uses system Arabic faces + Cairo/Tajawal as web fallback if present
-const AR_STACK = `'Alexandria', 'Cairo', 'Tajawal', -apple-system-ui-serif, 'SF Arabic', 'Geeza Pro', 'Al Bayan', Tahoma, ${SFText}`;
+// Arabic font stack — Alexandria via Google Fonts, with system Arabic faces as fallback
+const AR_STACK = `'Alexandria', -apple-system-ui-serif, 'SF Arabic', 'Geeza Pro', 'Al Bayan', Tahoma, ${SFText}`;
 
 export default function GlobalStyles() {
   return (
@@ -62,15 +62,12 @@ export default function GlobalStyles() {
       .why-cta:hover { border-color:${C.gold} !important; }
       .footer-link:hover { color:${C.text} !important; }
       .social-link:hover { color:${C.gold} !important; }
-      .eyebrow-line::before { content:''; display:inline-block; width:24px; height:1px; background:${C.green}; margin-inline-end:12px; vertical-align:middle; }
-
       /* Light-theme overrides for the Why Us section */
-      #why .eyebrow-line::before { background: #3A5F58; }
       #why .why-cta:hover { border-color: #3A5F58 !important; }
       #why .section-h2 { color: #111 !important; }
       #why .section-subtext { color: #555 !important; }
-      .lang-toggle { background:transparent; color:${C.gold}; border:1px solid rgba(211,185,136,0.4); border-radius:9999px; padding:6px 14px; font-size:12px; font-weight:600; letter-spacing:0.08em; font-family:${SFText}; }
-      .lang-toggle:hover { background:rgba(211,185,136,0.08); }
+      .lang-toggle { background:${C.text}; color:${C.bg}; border:none; border-radius:9999px; padding:6px 14px; font-size:12px; font-weight:600; letter-spacing:0.08em; font-family:${SFText}; cursor:pointer; }
+      .lang-toggle:hover { background:${C.gold}; }
 
       /* Mobile hamburger button — hidden on desktop */
       .nav-menu-btn {
@@ -128,10 +125,6 @@ export default function GlobalStyles() {
         .why-left-sticky { position: static !important; }
         .footer-top-grid { grid-template-columns: 1fr 1fr !important; }
         .footer-brand-full { grid-column: 1 / -1 !important; }
-      }
-      @media (max-width: 560px) {
-        .intro-cloud-grid { grid-template-columns: 1fr !important; }
-        .intro-cloud-photo-first { border-inline-end: none !important; border-block-end: 1px solid ${C.border}; }
       }
 
       /* Unified horizontal padding across the site — one value per breakpoint.
