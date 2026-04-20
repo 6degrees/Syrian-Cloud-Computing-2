@@ -1,7 +1,7 @@
 import { C, SFText } from '../theme';
 
 // Arabic font stack — uses system Arabic faces + Cairo/Tajawal as web fallback if present
-const AR_STACK = `'Cairo', 'Tajawal', -apple-system-ui-serif, 'SF Arabic', 'Geeza Pro', 'Al Bayan', Tahoma, ${SFText}`;
+const AR_STACK = `'Alexandria', 'Cairo', 'Tajawal', -apple-system-ui-serif, 'SF Arabic', 'Geeza Pro', 'Al Bayan', Tahoma, ${SFText}`;
 
 export default function GlobalStyles() {
   return (
@@ -13,9 +13,6 @@ export default function GlobalStyles() {
 
       html[dir="rtl"] body { font-family: ${AR_STACK}; }
 
-      @media (pointer: fine) and (prefers-reduced-motion: no-preference) {
-        body, a, button { cursor: none; }
-      }
 
       @media (prefers-reduced-motion: reduce) {
         *, *::before, *::after {

@@ -50,7 +50,6 @@ export default function WhyChooseUs() {
             }}
             className="why-left-sticky"
           >
-            <div style={light.eyebrow} className="eyebrow-line">{t.why.eyebrow}</div>
             <h2 style={light.h2} className="section-h2">{t.why.title}<br />{t.why.titleLine2}</h2>
             <p style={light.subText} className="section-subtext">{t.why.body}</p>
             <a
