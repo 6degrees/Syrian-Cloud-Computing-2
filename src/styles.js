@@ -39,13 +39,13 @@ export const s = {
 
   statsBar: { borderTop: `1px solid ${C.border}`, borderBottom: `1px solid ${C.border}`, background: 'rgba(15,20,16,0.62)', padding: '0 48px' },
   statsInner: { maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4,1fr)' },
-  statItem: (i) => ({ padding: '20px 18px', textAlign: 'center', borderRight: i < 3 ? `1px solid ${C.border}` : 'none' }),
+  statItem: (i) => ({ padding: '20px 18px', textAlign: 'center', borderInlineEnd: i < 3 ? `1px solid ${C.border}` : 'none' }),
   statVal: { fontFamily: SF, fontSize: 24, fontWeight: 600, color: 'rgba(240,237,230,0.9)', lineHeight: 1, marginBottom: 4, letterSpacing: '-0.01em' },
   statLabel: { fontSize: 10.5, color: 'rgba(122,148,144,0.82)', letterSpacing: '0.14em', textTransform: 'uppercase', fontFamily: SFMono },
 
   introSection: { padding: '120px 48px', background: C.bg },
   introGrid: { display: 'grid', gridTemplateColumns: '1fr', gap: 36, alignItems: 'stretch' },
-  introTextWrap: { paddingRight: 8 },
+  introTextWrap: { paddingInlineEnd: 8 },
   introVisualCard: {
     border: `1px solid ${C.border}`,
     borderRadius: 12,
@@ -152,8 +152,7 @@ export const s = {
   featureDesc: { fontSize: 13.5, color: C.muted, lineHeight: 1.65, fontFamily: SFText },
 
   ctaSection: { position: 'relative', overflow: 'hidden', textAlign: 'center', padding: '120px 48px', background: C.bg },
-  ctaGlow: { position: 'absolute', width: 900, height: 500, left: '50%', top: '50%', transform: 'translate(-50%,-50%)', background: 'radial-gradient(ellipse, rgba(37,64,58,0.5) 0%, transparent 70%)', pointerEvents: 'none' },
-  ctaH2: { fontFamily: SF, fontSize: 'clamp(36px,5vw,60px)', fontWeight: 700, lineHeight: 1.06, letterSpacing: '-0.025em', color: C.text, marginBottom: 20 },
+  ctaH2: { fontFamily: SF, fontSize: 'clamp(36px,5vw,60px)', fontWeight: 800, lineHeight: 1.06, letterSpacing: '-0.025em', color: C.text, marginBottom: 20 },
   ctaSub: { fontSize: 16, color: C.muted, margin: '0 auto 44px', maxWidth: 440, lineHeight: 1.65, fontFamily: SFText },
   btnGold: { padding: '16px 40px', background: C.gold, color: C.bg, border: 'none', borderRadius: 9999, fontFamily: SFText, fontSize: 15, fontWeight: 500, textDecoration: 'none', display: 'inline-block' },
   ctaSecondary: { fontSize: 13.5, color: C.muted, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 4, fontFamily: SFText, marginTop: 16 },

@@ -44,6 +44,7 @@ export default function IntroCloudPhotos() {
           target="_blank"
           rel="noopener noreferrer"
           style={s.introCloudCreditLink}
+          aria-label="Photo by Growtika on Unsplash (opens in new tab)"
         >
           Growtika
         </a>
@@ -55,6 +56,7 @@ export default function IntroCloudPhotos() {
           target="_blank"
           rel="noopener noreferrer"
           style={s.introCloudCreditLink}
+          aria-label="Photo by Hazel Z on Unsplash (opens in new tab)"
         >
           Hazel Z
         </a>
@@ -66,6 +68,7 @@ export default function IntroCloudPhotos() {
           target="_blank"
           rel="noopener noreferrer"
           style={s.introCloudCreditLink}
+          aria-label="Unsplash (opens in new tab)"
         >
           Unsplash
         </a>

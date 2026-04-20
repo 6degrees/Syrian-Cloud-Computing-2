@@ -1,5 +1,5 @@
 import { s } from '../styles';
-import bgImage from '../assets/Background.png';
+import bgImage from '../assets/Background.jpg';
 import useReveal from '../hooks/useReveal';
 import { useLang } from '../i18n/LanguageContext';
 
@@ -47,7 +47,6 @@ export default function CTASection() {
           transition: 'opacity 0.7s ease, transform 0.7s ease',
         }}
       >
-        <div style={{ ...s.eyebrow, justifyContent: 'center' }}>{t.cta.eyebrow}</div>
         <h2 style={s.ctaH2} className="section-h2">{t.cta.title}<br />{t.cta.titleLine2}</h2>
         <p style={s.ctaSub} className="section-subtext">{t.cta.sub}</p>
         <div style={{ marginBottom: 16 }}>
@@ -55,9 +54,6 @@ export default function CTASection() {
             {t.cta.primary}
           </a>
         </div>
-        <a href="mailto:hello@syriancloud.com?subject=Technical%20inquiry" style={s.ctaSecondary} className="cta-secondary">
-          {t.cta.secondary} {isRTL ? '←' : '→'}
-        </a>
       </div>
     </section>
   );

@@ -15,7 +15,7 @@ export const translations = {
       introduction: 'من نحن',
       services: 'خدماتنا',
       why: 'لماذا نحن',
-      contact: 'تواصل معنا',
+      contact: 'تسجيل الدخول',
       langToggle: 'EN',
       backToTop: 'العودة للأعلى',
     },
@@ -24,7 +24,7 @@ export const translations = {
     hero: {
       badge: 'شريك التحول الرقمي',
       line1: 'تمكين التحول الرقمي',
-      line2: 'عبر الحوسبة السحابية والبرمجيات والحلول الذكية للأعمال',
+      line2: 'عبر السحابة والبرمجيات والحلول الذكية',
       sub: 'حوسبة سحابية آمنة، واستضافة محلية، وعمليات مُدارة، وخدمات رقمية تعزز الإيرادات — لتسريع رحلتك الرقمية.',
       ctaPrimary: 'ابدأ الآن',
       ctaSecondary: 'اكتشف خدماتنا',
@@ -43,59 +43,59 @@ export const translations = {
       localLabel: 'استضافة البيانات',
     },
 
-    // Introduction (verbatim approved text)
+    // Introduction
     intro: {
-      eyebrow: 'من نحن',
-      title: 'أصبح التحول الرقمي ركيزة أساسية في إعادة تشكيل الصناعات',
+      eyebrow: 'رؤيتنا',
+      title: 'مهمتنا تسريع التحول الرقمي في سوريا',
       body: 'أصبح التحول الرقمي ركيزة أساسية في إعادة تشكيل الصناعات وتمكين المؤسسات من الانتقال من العمليات التقليدية إلى الخدمات الرقمية والإلكترونية المتقدمة. مهمتنا دعم هذا التحول من خلال تقديم خدمات حوسبة سحابية موثوقة، ومنصات برمجية حديثة، وحلول رقمية متكاملة تساعد الشركات على رفع الكفاءة، وتحسين تجربة العملاء، وفتح فرص جديدة لتوليد الإيرادات.',
       visualLabel: 'نطاق عمل السورية للحوسبة السحابية',
       visualTitle: 'بنية سحابية محلية ومنصات رقمية موثوقة',
       visualMeta: 'نقدّم البنية التحتية كخدمة، والبرمجيات كخدمة مستضافة داخل سوريا، والعمليات المُدارة، والحلول الرقمية للمؤسسات التي تحتاج إلى استمرارية الخدمة، وسيادة البيانات، ونتائج أعمال قابلة للقياس.',
     },
 
-    // Services (six approved categories, verbatim descriptions)
+    // Services (six approved categories)
     services: {
       eyebrow: 'خدماتنا',
       title: 'ستة مسارات خدمية',
       titleLine2: 'لدعم رحلتك نحو التحول الرقمي',
       lead: 'من البنية التحتية السحابية والبرمجيات المستضافة محلياً إلى تطبيقات الموبايل والتسويق الرقمي والخدمات الموجّهة للأفراد — باقة متكاملة لدعم الشركات والجهات الحكومية.',
-      learnMore: 'اعرف المزيد',
+      learnMore: 'تواصل معنا',
       items: [
         {
           num: '01',
           icon: 'cloud',
           title: 'الحوسبة السحابية والتحول الرقمي',
-          desc: 'نقدّم خدمات حوسبة سحابية متقدمة مصممة لدعم المؤسسات في بناء وترحيل وتشغيل بيئاتها الرقمية بثقة. تساعد حلولنا الشركات على تحديث البنية التحتية، وتحسين قابلية التوسع، وتعزيز المرونة، وتسريع تبني الخدمات الرقمية في جميع القطاعات.',
+          desc: 'خدمات حوسبة سحابية متقدمة لبناء وترحيل وتشغيل بيئاتك الرقمية بثقة — تحديث البنية التحتية وتعزيز المرونة وتسريع التبني الرقمي.',
         },
         {
           num: '02',
           icon: 'server',
           title: 'البنية التحتية كخدمة والعمليات المُدارة',
-          desc: 'يتيح عرضنا للبنية التحتية كخدمة (IaaS) للشركات الوصول إلى موارد حوسبة آمنة وقابلة للتوسع وعالية الأداء دون تعقيدات امتلاك وإدارة البنية التحتية المادية. إضافةً إلى ذلك، تضمن خدماتنا المُدارة مراقبةً وإدارةً وتحسيناً ودعماً تشغيلياً مستمراً، مما يتيح للعملاء التركيز على أعمالهم الأساسية بينما نتولى إدارة البيئة التقنية.',
+          desc: 'موارد حوسبة آمنة وقابلة للتوسع دون تعقيدات البنية المادية، مع مراقبة وإدارة ودعم تشغيلي مستمر على مدار الساعة.',
         },
         {
           num: '03',
           icon: 'shield',
           title: 'البرمجيات كخدمة مستضافة محلياً',
-          desc: 'نقدّم حلول البرمجيات كخدمة (SaaS) المستضافة محلياً داخل البلاد لتلبية المتطلبات التنظيمية والتشغيلية ومتطلبات القطاعات المختلفة. تدعم منصاتنا البرمجية المستضافة محلياً الشركات والجهات الحكومية في تسريع الترحيل الرقمي مع الحفاظ على سيادة البيانات والامتثال والأمن وموثوقية الخدمة.',
+          desc: 'حلول SaaS مستضافة داخل سوريا لتلبية المتطلبات التنظيمية مع الحفاظ على سيادة البيانات والامتثال وموثوقية الخدمة.',
         },
         {
           num: '04',
           icon: 'phone',
           title: 'تطوير تطبيقات الموبايل واستضافتها وتسويقها',
-          desc: 'نصمّم ونطوّر تطبيقات موبايل تساعد الشركات على بناء تفاعل أقوى مع العملاء، وتحسين تقديم الخدمات، وفتح قنوات رقمية جديدة. وبالتكامل مع استضافة موثوقة ودعم تسويقي موجّه، تساعد حلولنا مؤسسات B2B على تسريع النمو، وتوسيع نطاق العلامة التجارية، وتوليد مصادر إيرادات إضافية.',
+          desc: 'تصميم وتطوير تطبيقات موبايل مع استضافة موثوقة ودعم تسويقي — لتعزيز التفاعل مع العملاء وفتح قنوات رقمية جديدة.',
         },
         {
           num: '05',
           icon: 'megaphone',
           title: 'حملات التسويق الرقمي وتسريع المبيعات',
-          desc: 'بُنيت خدماتنا للتسويق الرقمي لمساعدة المؤسسات على توسيع الوصول السوقي، واستقطاب عملاء محتملين بجودة عالية، وتحسين معدلات التحويل. من خلال الحملات الاستراتيجية والاستهداف المبني على البيانات وتحسين الأداء، ندعم الشركات في تسريع المبيعات وتعظيم العائد على استثماراتها الرقمية.',
+          desc: 'حملات استراتيجية واستهداف مبني على البيانات لتوسيع الوصول السوقي واستقطاب عملاء بجودة عالية وتعظيم العائد الرقمي.',
         },
         {
           num: '06',
           icon: 'users',
           title: 'خدمات رقمية للأفراد لتسريع الإيرادات',
-          desc: 'نقدّم كذلك خدمات رقمية موجّهة للأفراد (B2C) تمكّن الشركات من التواصل المباشر مع العملاء النهائيين عبر تجارب رقمية مبتكرة. من المنصات الرقمية وتطبيقات الموبايل إلى حلول التفاعل الإلكتروني، صُمّمت خدماتنا لخلق القيمة وتعزيز الوصول وتسريع توليد الإيرادات.',
+          desc: 'خدمات B2C تمكّن الشركات من التواصل المباشر مع العملاء النهائيين عبر منصات رقمية وتطبيقات موبايل وحلول تفاعل مبتكرة.',
         },
       ],
     },
@@ -117,7 +117,7 @@ export const translations = {
 
     // CTA
     cta: {
-      eyebrow: 'لنبدأ',
+      eyebrow: 'الخطوة التالية',
       title: 'جاهز لتسريع رحلة',
       titleLine2: 'تحولك الرقمي؟',
       sub: 'دعنا نصمم لك المزيج المناسب من خدمات الحوسبة السحابية والبرمجيات والخدمات الرقمية لمؤسستك.',
@@ -131,8 +131,7 @@ export const translations = {
       navigation: 'التنقل',
       navLinks: {
         services: 'ماذا نقدّم',
-        why: 'فلسفتنا',
-        insights: 'رؤى',
+        why: 'لماذا نحن',
         contact: 'تواصل',
       },
       contact: 'للتواصل',
@@ -150,12 +149,12 @@ export const translations = {
       introduction: 'About us',
       services: 'Services',
       why: 'Why Us',
-      contact: 'Contact',
+      contact: 'Login',
       langToggle: 'ع',
       backToTop: 'Back to top',
     },
 
-    // Hero (approved headline + sub-headline, verbatim)
+    // Hero
     hero: {
       badge: 'Digital Transformation Partner',
       line1: 'Empowering Digital Transformation',
@@ -177,59 +176,59 @@ export const translations = {
       localLabel: 'Data Residency',
     },
 
-    // Introduction (verbatim approved paragraph)
+    // Introduction
     intro: {
-      eyebrow: 'About us',
-      title: 'Digital transformation is reshaping industries.',
+      eyebrow: 'Our Vision',
+      title: 'Our mission is to accelerate digital transformation in Syria.',
       body: 'Digital transformation has become a key pillar in reshaping industries and enabling organizations to move from traditional operations to advanced digital and e-services. Our mission is to support this transformation by delivering reliable cloud computing services, modern software platforms, and end-to-end digital solutions that help businesses improve efficiency, enhance customer experience, and unlock new revenue opportunities.',
       visualLabel: 'Syrian Cloud Computing at a glance',
       visualTitle: 'Local cloud infrastructure and trusted digital platforms',
       visualMeta: 'SCC delivers IaaS, locally hosted SaaS, managed operations, and digital services for organizations that need reliability, data residency in Syria, and measurable business outcomes—the same capabilities we design, deploy, and run for our clients.',
     },
 
-    // Services (six approved categories, verbatim descriptions)
+    // Services (six approved categories)
     services: {
       eyebrow: 'Services',
       title: 'Six service tracks',
       titleLine2: 'to power your digital transformation',
       lead: 'From cloud infrastructure and locally hosted software to mobile apps, digital marketing, and B2C services — a full suite built for businesses and government entities.',
-      learnMore: 'Learn more',
+      learnMore: 'Get in touch',
       items: [
         {
           num: '01',
           icon: 'cloud',
           title: 'Cloud Computing & Digital Transformation',
-          desc: 'We provide advanced cloud computing services designed to support organizations in building, migrating, and operating their digital environments with confidence. Our solutions help enterprises modernize infrastructure, improve scalability, strengthen resilience, and accelerate the adoption of digital services across all sectors.',
+          desc: 'Advanced cloud services to build, migrate, and operate your digital environment — modernizing infrastructure, improving scalability, and accelerating digital adoption.',
         },
         {
           num: '02',
           icon: 'server',
           title: 'Infrastructure as a Service & Managed Operations',
-          desc: 'Our Infrastructure as a Service (IaaS) offering enables businesses to access secure, scalable, and high-performance computing resources without the complexity of owning and managing physical infrastructure. In addition, our managed services ensure continuous monitoring, administration, optimization, and operational support, allowing customers to focus on their core business while we manage the technology environment.',
+          desc: 'Secure, scalable computing resources without the complexity of physical infrastructure, backed by continuous monitoring and 24/7 operational support.',
         },
         {
           num: '03',
           icon: 'shield',
           title: 'Software as a Service Hosted Within the Country',
-          desc: 'We deliver Software as a Service (SaaS) solutions hosted locally within the country to meet regulatory, operational, and industry-specific requirements. Our locally hosted software platforms support businesses and government entities in accelerating digital migration while maintaining data residency, compliance, security, and service reliability.',
+          desc: 'Locally hosted SaaS solutions meeting regulatory requirements while maintaining data residency, compliance, security, and service reliability.',
         },
         {
           num: '04',
           icon: 'phone',
           title: 'Mobile Application Development, Hosting & Marketing',
-          desc: 'We design and develop mobile applications that help businesses create stronger engagement with customers, improve service delivery, and open new digital channels. Combined with reliable hosting and targeted marketing support, our mobile solutions help B2B organizations accelerate growth, improve brand reach, and generate additional revenue streams.',
+          desc: 'Custom mobile apps with reliable hosting and targeted marketing — strengthening customer engagement and opening new digital revenue channels.',
         },
         {
           num: '05',
           icon: 'megaphone',
           title: 'Digital Marketing Campaigns & Sales Acceleration',
-          desc: 'Our digital marketing services are built to help organizations expand market reach, attract quality leads, and improve conversion rates. Through strategic campaigns, data-driven targeting, and performance optimization, we support businesses in accelerating sales and maximizing the return on their digital investments.',
+          desc: 'Strategic campaigns and data-driven targeting to expand market reach, attract quality leads, and maximize return on digital investments.',
         },
         {
           num: '06',
           icon: 'users',
           title: 'B2C Digital Services to Accelerate Revenue',
-          desc: 'We also provide B2C-focused digital services that enable businesses to connect directly with end customers through innovative digital experiences. From digital platforms and mobile applications to online engagement solutions, our services are designed to create value, improve accessibility, and accelerate revenue generation.',
+          desc: 'Consumer-facing digital platforms, mobile apps, and engagement solutions that connect businesses directly with end customers to drive revenue.',
         },
       ],
     },
@@ -244,12 +243,12 @@ export const translations = {
         { num: '01', title: 'Efficiency', desc: 'Services engineered for peak performance with operating costs tuned for the Syrian market.' },
         { num: '02', title: 'Reliability', desc: 'Stable infrastructure and continuous monitoring to keep business operations running 24/7.' },
         { num: '03', title: 'Local Trust', desc: 'In-country hosting for data sovereignty and full alignment with local regulatory requirements.' },
-        { num: '04', title: 'Reconstruction', desc: 'Tangible digital contributions to Syria’s reconstruction journey and national institutions.' },
+        { num: '04', title: 'Reconstruction', desc: 'Tangible digital contributions to Syria\'s reconstruction journey and national institutions.' },
       ],
     },
 
     cta: {
-      eyebrow: 'Get Started',
+      eyebrow: 'Next Step',
       title: 'Ready to accelerate your',
       titleLine2: 'digital transformation journey?',
       sub: 'Let us design the right mix of cloud, software, and digital services for your organization.',
@@ -262,8 +261,7 @@ export const translations = {
       navigation: 'Navigation',
       navLinks: {
         services: 'What We Do',
-        why: 'Our Philosophy',
-        insights: 'Insights',
+        why: 'Why Us',
         contact: 'Contact',
       },
       contact: 'Contact',
