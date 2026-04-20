@@ -23,7 +23,7 @@ export const s = {
   vignette: { position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 80% 70% at 50% 50%, transparent 30%, #0A0D0C 100%)', zIndex: 1, pointerEvents: 'none' },
   vignetteBottom: { position: 'absolute', bottom: 0, left: 0, right: 0, height: 200, background: 'linear-gradient(to bottom, transparent, #0A0D0C)', zIndex: 2, pointerEvents: 'none' },
   heroContent: { position: 'relative', zIndex: 10, textAlign: 'center', width: '100%', maxWidth: 1200 },
-  h1: { fontFamily: SF, fontSize: 'clamp(36px,5.8vw,72px)', fontWeight: 600, lineHeight: 0.98, letterSpacing: '-0.025em', color: C.text, marginBottom: 24, marginInline: 'auto' },
+  h1: { fontFamily: SF, fontSize: 'clamp(36px,5.8vw,72px)', fontWeight: 550, lineHeight: 0.98, letterSpacing: '-0.025em', color: C.text, marginBottom: 24, marginInline: 'auto' },
   heroSub: { fontSize: 'clamp(15px,1.5vw,18px)', color: C.muted, lineHeight: 1.65, maxWidth: 860, margin: '0 auto 40px', fontFamily: SFText },
   heroBtns: { display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' },
   btnPrimary: { padding: '14px 32px', background: C.text, color: C.bg, border: 'none', borderRadius: 9999, fontFamily: SFText, fontSize: 14, fontWeight: 500, transition: 'background 0.25s, transform 0.15s', textDecoration: 'none', display: 'inline-block' },
