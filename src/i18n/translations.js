@@ -161,8 +161,8 @@ export const translations = {
 
     // Introduction
     intro: {
-      title: 'Accelerating Syria\'s digital future.',
-      body: 'The Syrian Company for Cloud Computing Services (SCC) was founded to bridge the digital infrastructure gap in Syria. We provide secure, locally hosted cloud computing, modern software platforms, and managed digital services, giving businesses and government entities the tools they need to modernize operations, maintain data sovereignty, and drive measurable growth. As Syria rebuilds, we believe reliable digital infrastructure is the foundation for economic recovery and institutional resilience.',
+      title: 'Accelerating the Digital Economy in Syria.',
+      body: 'The Syrian Company for Cloud Computing Services was established to serve as a core enabler of digital infrastructure and the digital economy in Syria through secure, reliable, and locally hosted cloud solutions. We provide advanced technology platforms and managed digital services that help businesses and government entities accelerate digital transformation, improve operational efficiency, and create new data-driven business models while ensuring data sovereignty and regulatory compliance. As reconstruction efforts advance, we believe modern digital infrastructure is a key engine for economic growth and a foundation for a resilient, sustainable, and innovation-ready digital economy.',
     },
 
     // Services (six approved categories)
