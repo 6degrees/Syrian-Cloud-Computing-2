@@ -7,5 +7,6 @@ export const icons = {
   clock: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10" /><path d="M12 8v4l3 3" /></svg>,
   phone: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="7" y="2" width="10" height="20" rx="2" /><line x1="11" y1="18" x2="13" y2="18" /></svg>,
   megaphone: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M3 11v2a1 1 0 001 1h3l6 5V5L7 10H4a1 1 0 00-1 1z" /><path d="M17 8a5 5 0 010 8" /></svg>,
+  fintech: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 21s7-3.5 7-9V6.2L12 3 5 6.2V12c0 5.5 7 9 7 9z" /><rect x="9" y="11" width="6" height="5" rx="1.2" /><path d="M10.5 11v-1.1a1.5 1.5 0 013 0V11" /><path d="M12 13.2v1.6" /></svg>,
   users: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg>,
 };

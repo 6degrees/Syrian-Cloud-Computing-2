@@ -49,13 +49,21 @@ export default function Footer() {
           <div>
             <div style={s.footerColTitle}>{t.footer.contact}</div>
             <address style={{ fontSize: 13, color: C.muted, lineHeight: 1.8, fontFamily: SFText, fontStyle: 'normal' }}>
-              {t.footer.address}<br /><br />
+              {t.footer.address}<br />
+              {t.footer.cities}<br /><br />
               <a
-                href="mailto:hello@syriancloud.com"
-                style={{ color: C.muted, textDecoration: 'none' }}
+                href={`mailto:${t.footer.email}`}
+                style={{ color: C.muted, textDecoration: 'none', display: 'block' }}
                 className="footer-link"
               >
-                hello@syriancloud.com
+                {t.footer.email}
+              </a>
+              <a
+                href={`tel:${t.footer.phone.replace(/\s+/g, '')}`}
+                style={{ color: C.muted, textDecoration: 'none', display: 'block', marginTop: 8 }}
+                className="footer-link"
+              >
+                {t.footer.phone}
               </a>
             </address>
           </div>

@@ -32,14 +32,12 @@ export const translations = {
 
     // Stats
     stats: {
-      uptime: 'جاهزية الخدمة',
-      uptimeLabel: 'وقت التشغيل',
-      network: 'شبكة فائقة',
-      networkLabel: 'سرعة الشبكة',
-      support: 'دعم مستمر',
-      supportLabel: 'الدعم الفني',
-      localValue: 'محلي',
-      localLabel: 'استضافة البيانات',
+      items: [
+        { val: 'القطاع الحكومي', label: 'تحول رقمي' },
+        { val: 'قطاع الأعمال', label: 'نمو في الإيرادات' },
+        { val: 'قطاع الإتصالات', label: 'خدمات الأعمال و الأفراد' },
+        { val: 'القطاع المالي', label: 'اقتصاد رقمي' },
+      ],
     },
 
     // Introduction
@@ -86,9 +84,9 @@ export const translations = {
         },
         {
           num: '06',
-          icon: 'users',
-          title: 'خدمات رقمية للأفراد لتسريع الإيرادات',
-          desc: 'خدمات B2C تمكّن الشركات من التواصل المباشر مع العملاء النهائيين عبر منصات رقمية وتطبيقات جوال وحلول تفاعل مبتكرة.',
+          icon: 'fintech',
+          title: 'حلول التقنية المالية والأمن السيبراني',
+          desc: 'حلول تقنية مالية آمنة وحماية سيبرانية متقدمة تساعد المؤسسات على تأمين المعاملات الرقمية، وتعزيز الامتثال، وتقليل المخاطر.',
         },
       ],
     },
@@ -120,7 +118,10 @@ export const translations = {
       description: 'نبني بنية تحتية سحابية موثوقة للمؤسسات والجهات الحكومية في سوريا. حلول محلية بتقنيات عالمية.',
       navigation: 'التنقل',
       contact: 'للتواصل',
-      address: 'دمشق، سوريا',
+      address: 'سوريا',
+      cities: 'دمشق - حلب',
+      email: 'Support@scc.com.sy',
+      phone: '+963 933879763',
       rights: 'جميع الحقوق محفوظة.',
     },
   },
@@ -150,14 +151,12 @@ export const translations = {
     },
 
     stats: {
-      uptime: '99.99%',
-      uptimeLabel: 'Uptime',
-      network: '10 Gbps',
-      networkLabel: 'Network',
-      support: '24/7',
-      supportLabel: 'Support',
-      localValue: 'Local',
-      localLabel: 'Data Residency',
+      items: [
+        { val: 'Government Sector', label: 'Digital Transformation' },
+        { val: 'Business Sector', label: 'Revenue Growth' },
+        { val: 'Telecom Sector', label: 'Business and Consumer Services' },
+        { val: 'Financial Sector', label: 'Digital Economy' },
+      ],
     },
 
     // Introduction
@@ -204,9 +203,9 @@ export const translations = {
         },
         {
           num: '06',
-          icon: 'users',
-          title: 'B2C Digital Services to Accelerate Revenue',
-          desc: 'Consumer-facing digital platforms, mobile apps, and engagement solutions that connect businesses directly with end customers to drive revenue.',
+          icon: 'fintech',
+          title: 'Fintech and Security Solutions',
+          desc: 'Secure fintech and cybersecurity solutions that protect digital transactions, strengthen compliance, and reduce operational risk.',
         },
       ],
     },
@@ -235,7 +234,10 @@ export const translations = {
       description: 'Building reliable cloud infrastructure for businesses and government entities across Syria. Local solutions with global technology.',
       navigation: 'Navigation',
       contact: 'Contact',
-      address: 'Damascus, Syria',
+      address: 'Syria',
+      cities: 'Damascus - Aleppo',
+      email: 'Support@scc.com.sy',
+      phone: '+963 933879763',
       rights: 'All rights reserved.',
     },
   },
