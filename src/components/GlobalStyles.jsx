@@ -148,6 +148,76 @@ export default function GlobalStyles() {
         nav, #hero, .stats-bar, footer { padding-inline: 20px !important; }
         section, .section-pad { padding-top: 72px !important; padding-bottom: 72px !important; padding-inline: 20px !important; }
       }
+      /* ─── Preloader ─────────────────────────────────────── */
+      .preloader {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: all;
+      }
+
+      .preloader--exit {
+        animation: preloader-zoom-out 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        pointer-events: none;
+      }
+
+      @keyframes preloader-zoom-out {
+        from { opacity: 1; transform: scale(1); }
+        to   { opacity: 0; transform: scale(1.12); }
+      }
+
+      /* Page content fades + scales in as preloader disappears */
+      .page-hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .page-reveal {
+        animation: page-zoom-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+
+      @keyframes page-zoom-in {
+        from { opacity: 0; transform: scale(1.04); }
+        to   { opacity: 1; transform: scale(1); }
+      }
+
+      /* Group starts shifted right so the S sits at screen center,
+         then slides left to the fully-composed centered position */
+      .preloader__group {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        animation: preloader-group-shift 0.72s cubic-bezier(0.65, 0, 0.35, 1) 0.65s both;
+      }
+
+      @keyframes preloader-group-shift {
+        from { transform: translateX(var(--offset, 78px)); }
+        to   { transform: translateX(0); }
+      }
+
+      /* S mark fades + scales in */
+      .preloader__s {
+        animation: preloader-s-in 0.5s cubic-bezier(0.34, 1.4, 0.64, 1) 0.2s both;
+      }
+
+      @keyframes preloader-s-in {
+        from { opacity: 0; transform: scale(0.72); }
+        to   { opacity: 1; transform: scale(1); }
+      }
+
+      /* Text slides in from the right */
+      .preloader__text {
+        animation: preloader-text-in 0.55s cubic-bezier(0.4, 0, 0.2, 1) 0.78s both;
+      }
+
+      @keyframes preloader-text-in {
+        from { opacity: 0; transform: translateX(18px); }
+        to   { opacity: 1; transform: translateX(0); }
+      }
     `}</style>
   );
 }
