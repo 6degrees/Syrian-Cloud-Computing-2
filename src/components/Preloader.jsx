@@ -20,13 +20,11 @@ export default function Preloader({ onDone }) {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
 
-    // Start exit animation + signal App to begin page zoom-in simultaneously
     const t1 = setTimeout(() => {
       setPhase('exit');
       onDone();
     }, 2100);
 
-    // After exit animation finishes, remove preloader from DOM
     const t2 = setTimeout(() => {
       document.body.style.overflow = '';
       setGone(true);

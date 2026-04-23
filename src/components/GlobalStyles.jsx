@@ -155,7 +155,7 @@ export default function GlobalStyles() {
         position: fixed;
         inset: 0;
         z-index: 9999;
-        background: #000 url('${BASE}gradient-bg.svg') center center / cover no-repeat;
+        background: #000;
         display: flex;
         align-items: center;
         justify-content: center;
