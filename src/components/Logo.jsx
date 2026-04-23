@@ -11,8 +11,8 @@ export default function Logo({ footer = false }) {
       src={src}
       alt={t.companyName}
       style={{
-        width: footer ? (isArabic ? 170 : 140) : (isArabic ? 112 : 98),
-        height: 'auto',
+        height: footer ? 52 : 34,
+        width: 'auto',
         display: 'block',
         opacity: 0.95,
       }}
