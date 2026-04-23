@@ -163,13 +163,13 @@ export default function GlobalStyles() {
       }
 
       .preloader--exit {
-        animation: preloader-zoom-out 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        animation: preloader-zoom-out 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         pointer-events: none;
       }
 
       @keyframes preloader-zoom-out {
-        from { opacity: 1; transform: scale(1); }
-        to   { opacity: 0; transform: scale(1.12); }
+        from { opacity: 1; }
+        to   { opacity: 0; }
       }
 
       /* Page content fades + scales in as preloader disappears */
@@ -179,12 +179,12 @@ export default function GlobalStyles() {
       }
 
       .page-reveal {
-        animation: page-zoom-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+        animation: page-zoom-in 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
       }
 
       @keyframes page-zoom-in {
-        from { opacity: 0; transform: scale(1.04); }
-        to   { opacity: 1; transform: scale(1); }
+        from { opacity: 0; }
+        to   { opacity: 1; }
       }
 
       /* Group starts shifted right so the S sits at screen center,
