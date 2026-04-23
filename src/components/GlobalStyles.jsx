@@ -3,6 +3,8 @@ import { C, SFText } from '../theme';
 // Arabic font stack — Alexandria via Google Fonts, with system Arabic faces as fallback
 const AR_STACK = `'Alexandria', -apple-system-ui-serif, 'SF Arabic', 'Geeza Pro', 'Al Bayan', Tahoma, ${SFText}`;
 
+const BASE = import.meta.env.BASE_URL;
+
 export default function GlobalStyles() {
   return (
     <style>{`
@@ -153,7 +155,7 @@ export default function GlobalStyles() {
         position: fixed;
         inset: 0;
         z-index: 9999;
-        background: #000;
+        background: #000 url('${BASE}gradient-bg.svg') center center / cover no-repeat;
         display: flex;
         align-items: center;
         justify-content: center;
