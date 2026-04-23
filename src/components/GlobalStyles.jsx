@@ -62,10 +62,8 @@ export default function GlobalStyles() {
       .why-cta:hover { border-color:${C.gold} !important; }
       .footer-link:hover { color:${C.text} !important; }
       .social-link:hover { color:${C.gold} !important; }
-      /* Light-theme overrides for the Why Us section */
-      #why .why-cta:hover { border-color: #3A5F58 !important; }
-      #why .section-h2 { color: #111 !important; }
-      #why .section-subtext { color: #555 !important; }
+      /* Why Us section hover treatment on dark green + wheat palette */
+      #why .why-cta:hover { border-color: ${C.gold} !important; }
       .lang-toggle { background:#f7f2e8; color:${C.bg}; border:none; border-radius:9999px; padding:6px 14px; font-size:12px; font-weight:600; letter-spacing:0.08em; font-family:${SFText}; cursor:pointer; }
       .lang-toggle:hover { background:#efe8da; }
       html[dir="ltr"] .lang-toggle { font-weight: 300; }
