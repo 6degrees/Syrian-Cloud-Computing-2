@@ -11,7 +11,7 @@ export default function Logo({ footer = false }) {
       src={src}
       alt={t.companyName}
       style={{
-        height: footer ? 52 : 34,
+        height: footer ? 52 : 42,
         width: 'auto',
         display: 'block',
         opacity: 0.95,

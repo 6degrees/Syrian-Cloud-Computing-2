@@ -4,7 +4,7 @@ import { C, SF, SFText, SFMono } from './theme';
 export const s = {
   nav: (scrolled) => ({
     position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
-    padding: '0 48px', height: 64,
+    padding: '0 48px', height: 76,
     transition: 'background 0.4s, border-color 0.4s',
     background: scrolled ? '#060908' : 'transparent',
     borderBottom: `1px solid ${scrolled ? C.border : 'transparent'}`,
