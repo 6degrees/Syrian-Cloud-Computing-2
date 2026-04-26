@@ -103,6 +103,7 @@ export default function GlobalStyles() {
       }
       html[dir="rtl"] .mobile-drawer { transform: translateX(-100%); }
       .mobile-drawer.open { transform: translateX(0); visibility: visible; }
+      html[dir="rtl"] .mobile-drawer.open { transform: translateX(0); }
       .mobile-drawer-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
       .mobile-drawer-list a {
         display: block; padding: 16px 4px; font-size: 16px; font-weight: 500;
